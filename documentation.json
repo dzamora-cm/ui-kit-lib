@@ -1,0 +1,419 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-412a0da6833b82dea12eab5348f2443cf736dabca6ceca07e1959dc338a4cac9557b5bb057374a5796eb895e70c76f10c746f4c09dc32b985f7cbffb3a7b6327",
+            "file": "projects/pattern-lib/src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "pink",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype ButtonType = 'success' | 'default' | 'error';\n@Component({\n  selector: 'pl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string | null = null;\n  @Input() pink: boolean = false;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../style/global.scss\";\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button [attr.is-pink]=\"pink\">\n  {{ label ? \"😎 \" + label : \"No Label provided 🧐\" }}\n</button>\n<section class=\"example-section\">\n  <mat-checkbox class=\"example-margin\">Check me!</mat-checkbox>\n  <mat-checkbox class=\"example-margin\" [disabled]=\"true\">Disabled</mat-checkbox>\n</section>\n<mat-icon>done</mat-icon>\n<div class=\"example-button-row\">\n  <button mat-button>Basic</button>\n  <button mat-button color=\"primary\">Primary</button>\n  <button mat-button color=\"accent\">Accent</button>\n  <button mat-button color=\"warn\">Warn</button>\n  <button mat-button disabled>Disabled</button>\n  <a mat-button href=\"https://www.google.com/\" target=\"_blank\">Link</a>\n</div>\n<i class=\"material-icons\">cloud_upload</i>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "MaterialModule",
+            "id": "module-MaterialModule-f4b557540c8771bcd44968b98c47aa14e42b0a02504f5adeabfaf608ea447e7f2c30633b0df168342e6c4c63ff6d558bc6c40885bcafea9b8034fc4c793686fd",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/pattern-lib/src/lib/material.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatToolbarModule } from '@angular/material/toolbar';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatListModule } from '@angular/material/list';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatSortModule } from '@angular/material/sort';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatGridListModule } from '@angular/material/grid-list';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatTabsModule } from '@angular/material/tabs';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatTreeModule } from '@angular/material/tree';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatStepperModule } from '@angular/material/stepper';\n\nconst myModules: any[] = [\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n];\n\n@NgModule({\n  imports: [...myModules],\n  exports: [...myModules],\n})\nexport class MaterialModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PatternLibModule",
+            "id": "module-PatternLibModule-4f21fa570eecfba99c01022bbcb5b71fa6e210502f10500c96dca13111e06b6a03c10bc433ea411b3f0e2206a590a7fe6c19c68ddd2d327f910df0ee952cc71c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/pattern-lib/src/lib/pattern-lib.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatIconRegistry } from '@angular/material/icon';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [MaterialModule],\n  exports: [ButtonComponent, MaterialModule],\n})\nexport class PatternLibModule {\n  constructor(private matIconRegistry: MatIconRegistry) {\n    this.matIconRegistry.setDefaultFontSetClass('my-icons');\n  }\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/pattern-lib/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "FancyBlueButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "FancyPinkButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "myModules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/pattern-lib/src/lib/material.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any[]",
+                "defaultValue": "[\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n]"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/pattern-lib/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"success\" | \"default\" | \"error\"",
+                "file": "projects/pattern-lib/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/pattern-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/pattern-lib/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/pattern-lib/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "stories/Button.stories.ts": [
+                {
+                    "name": "FancyBlueButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "FancyPinkButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "projects/pattern-lib/src/lib/material.module.ts": [
+                {
+                    "name": "myModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/pattern-lib/src/lib/material.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/pattern-lib/src/lib/button/button.component.ts": [
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"success\" | \"default\" | \"error\"",
+                    "file": "projects/pattern-lib/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/pattern-lib/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/material.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "myModules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FancyBlueButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FancyPinkButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
