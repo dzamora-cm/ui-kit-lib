@@ -128,13 +128,13 @@
         },
         {
             "name": "UiKitLibModule",
-            "id": "module-UiKitLibModule-ed9774fd48d2eb0edd1e48562dd0c91162a704471c02690a690a82ef89006752233994e9482d3e7712b1adaa4ac882368b1672e214848bc98f6a2dae49739d07",
+            "id": "module-UiKitLibModule-8b5a410c65f4d48ffdb4cbd1e1cebc9bb022d6b9043f414c54f1e44df223ec9aaa0a000a38d0f81292c0ae56d4943e4de12ce1b3603fcaae3b6b17cbf25ca250",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ui-kit-lib/src/lib/ui-kit-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [MaterialModule],\n  exports: [ButtonComponent, MaterialModule],\n})\nexport class UiKitLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [MaterialModule, CommonModule],\n  exports: [ButtonComponent],\n})\nexport class UiKitLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -161,9 +161,6 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
-                        },
-                        {
-                            "name": "MaterialModule"
                         }
                     ]
                 },
