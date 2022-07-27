@@ -3,10 +3,10 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pattern-lib": {
+    "ui-kit-lib": {
       "projectType": "library",
       "root": "stories",
-      "sourceRoot": "projects/pattern-lib/src",
+      "sourceRoot": "projects/ui-kit-lib/src",
       "prefix": "pl",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,17 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/pattern-lib/ng-package.json",
+            "project": "projects/ui-kit-lib/ng-package.json",
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ]
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/pattern-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ui-kit-lib/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/pattern-lib/tsconfig.lib.json"
+              "tsConfig": "projects/ui-kit-lib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -35,13 +35,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/pattern-lib/src/test.ts",
-            "tsConfig": "projects/pattern-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/pattern-lib/karma.conf.js"
+            "main": "projects/ui-kit-lib/src/test.ts",
+            "tsConfig": "projects/ui-kit-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-kit-lib/karma.conf.js"
           }
         }
       }
     }
   },
-  "defaultProject": "pattern-lib"
+  "defaultProject": "ui-kit-lib"
 }

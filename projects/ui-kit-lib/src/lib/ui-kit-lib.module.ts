@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
 
 import { ButtonComponent } from './button/button.component';
 import { MaterialModule } from './material.module';
@@ -9,8 +8,4 @@ import { MaterialModule } from './material.module';
   imports: [MaterialModule],
   exports: [ButtonComponent, MaterialModule],
 })
-export class PatternLibModule {
-  constructor(private matIconRegistry: MatIconRegistry) {
-    this.matIconRegistry.setDefaultFontSetClass('my-icons');
-  }
-}
+export class UiKitLibModule {}

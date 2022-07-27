@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { ButtonComponent } from '../projects/pattern-lib/src/lib/button/button.component';
-import { MaterialModule } from 'projects/pattern-lib/src/lib/material.module';
+import { ButtonComponent } from '../projects/ui-kit-lib/src/lib/button/button.component';
+import { MaterialModule } from 'projects/ui-kit-lib/src/lib/material.module';
 
 export default {
   component: ButtonComponent,

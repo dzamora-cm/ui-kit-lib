@@ -10,7 +10,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-412a0da6833b82dea12eab5348f2443cf736dabca6ceca07e1959dc338a4cac9557b5bb057374a5796eb895e70c76f10c746f4c09dc32b985f7cbffb3a7b6327",
-            "file": "projects/pattern-lib/src/lib/button/button.component.ts",
+            "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -96,7 +96,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/pattern-lib/src/lib/material.module.ts",
+            "file": "projects/ui-kit-lib/src/lib/material.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatToolbarModule } from '@angular/material/toolbar';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatListModule } from '@angular/material/list';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatSortModule } from '@angular/material/sort';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatGridListModule } from '@angular/material/grid-list';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatTabsModule } from '@angular/material/tabs';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatTreeModule } from '@angular/material/tree';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatStepperModule } from '@angular/material/stepper';\n\nconst myModules: any[] = [\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n];\n\n@NgModule({\n  imports: [...myModules],\n  exports: [...myModules],\n})\nexport class MaterialModule {}\n",
             "children": [
@@ -127,14 +127,14 @@
             ]
         },
         {
-            "name": "PatternLibModule",
-            "id": "module-PatternLibModule-4f21fa570eecfba99c01022bbcb5b71fa6e210502f10500c96dca13111e06b6a03c10bc433ea411b3f0e2206a590a7fe6c19c68ddd2d327f910df0ee952cc71c",
+            "name": "UiKitLibModule",
+            "id": "module-UiKitLibModule-ed9774fd48d2eb0edd1e48562dd0c91162a704471c02690a690a82ef89006752233994e9482d3e7712b1adaa4ac882368b1672e214848bc98f6a2dae49739d07",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/pattern-lib/src/lib/pattern-lib.module.ts",
+            "file": "projects/ui-kit-lib/src/lib/ui-kit-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatIconRegistry } from '@angular/material/icon';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [MaterialModule],\n  exports: [ButtonComponent, MaterialModule],\n})\nexport class PatternLibModule {\n  constructor(private matIconRegistry: MatIconRegistry) {\n    this.matIconRegistry.setDefaultFontSetClass('my-icons');\n  }\n}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [MaterialModule],\n  exports: [ButtonComponent, MaterialModule],\n})\nexport class UiKitLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -184,7 +184,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/pattern-lib/src/test.ts",
+                "file": "projects/ui-kit-lib/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -214,7 +214,7 @@
                 "name": "myModules",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/pattern-lib/src/lib/material.module.ts",
+                "file": "projects/ui-kit-lib/src/lib/material.module.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
@@ -224,7 +224,7 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/pattern-lib/src/test.ts",
+                "file": "projects/ui-kit-lib/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
@@ -247,7 +247,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"default\" | \"error\"",
-                "file": "projects/pattern-lib/src/lib/button/button.component.ts",
+                "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -256,12 +256,12 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/pattern-lib/src/test.ts": [
+            "projects/ui-kit-lib/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/pattern-lib/src/test.ts",
+                    "file": "projects/ui-kit-lib/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -271,7 +271,7 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/pattern-lib/src/test.ts",
+                    "file": "projects/ui-kit-lib/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
@@ -309,12 +309,12 @@
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "projects/pattern-lib/src/lib/material.module.ts": [
+            "projects/ui-kit-lib/src/lib/material.module.ts": [
                 {
                     "name": "myModules",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/pattern-lib/src/lib/material.module.ts",
+                    "file": "projects/ui-kit-lib/src/lib/material.module.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
@@ -325,13 +325,13 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/pattern-lib/src/lib/button/button.component.ts": [
+            "projects/ui-kit-lib/src/lib/button/button.component.ts": [
                 {
                     "name": "ButtonType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"success\" | \"default\" | \"error\"",
-                    "file": "projects/pattern-lib/src/lib/button/button.component.ts",
+                    "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -346,7 +346,7 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/pattern-lib/src/lib/button/button.component.ts",
+                "filePath": "projects/ui-kit-lib/src/lib/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -355,7 +355,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/pattern-lib/src/lib/material.module.ts",
+                "filePath": "projects/ui-kit-lib/src/lib/material.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -365,7 +365,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/pattern-lib/src/test.ts",
+                "filePath": "projects/ui-kit-lib/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -375,7 +375,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/pattern-lib/src/test.ts",
+                "filePath": "projects/ui-kit-lib/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
