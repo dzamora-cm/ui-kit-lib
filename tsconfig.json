@@ -16,6 +16,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+
     "paths": {
       "ui-kit-lib": ["dist/ui-kit-lib/ui-kit-lib", "dist/ui-kit-lib"]
     },

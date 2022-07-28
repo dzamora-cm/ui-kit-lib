@@ -7,6 +7,6 @@ import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [ButtonComponent],
   imports: [MaterialModule, CommonModule],
-  exports: [ButtonComponent, MaterialModule],
+  exports: [ButtonComponent],
 })
 export class UiKitLibModule {}

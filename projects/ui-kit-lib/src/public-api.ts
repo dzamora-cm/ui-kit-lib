@@ -3,3 +3,4 @@
  */
 
 export * from './lib/ui-kit-lib.module';
+export * from './lib/button/button.component';

@@ -20,13 +20,20 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
 });
 
-export const FancyBlueButton = Template.bind({});
-FancyBlueButton.args = {
-  label: 'Button',
+export const ButtonDefault = Template.bind({});
+ButtonDefault.args = {
+  label: 'Button Default',
+  type: 'default',
 };
 
-export const FancyPinkButton = Template.bind({});
-FancyPinkButton.args = {
-  label: 'Pink version',
-  pink: true,
+export const ButtonError = Template.bind({});
+ButtonError.args = {
+  label: 'Button Error',
+  type: 'error',
+};
+
+export const ButtonSuccess = Template.bind({});
+ButtonSuccess.args = {
+  label: 'Button Success',
+  type: 'success',
 };

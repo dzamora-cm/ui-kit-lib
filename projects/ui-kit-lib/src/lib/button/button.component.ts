@@ -7,7 +7,14 @@ type ButtonType = 'success' | 'default' | 'error';
 })
 export class ButtonComponent implements OnInit {
   @Input() label: string | null = null;
-  @Input() pink: boolean = false;
+  @Input() type: ButtonType = 'default';
+  @Input() action: Function = () => {};
+  @Input() parameters: any = {};
+
+  actionButton = () => {
+    console.log('from actionButton');
+    this.action(this.parameters);
+  };
 
   constructor() {}
 
