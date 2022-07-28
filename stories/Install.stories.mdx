@@ -1,0 +1,40 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Install/Intro" />
+
+<style>{`
+  .box {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(233,233,233,0.7);
+    border-radius: 3px;
+  }
+  h3,p{
+    color: #1a6cb3 !important
+  }
+  strong{
+    color: #391d71
+  }
+  a{
+     color: #391d71  !important;
+     opacity: 0.6
+  }
+`}</style>
+
+# Hello you!
+
+<div class="box">
+  <h3> Angular </h3>
+  <p>src/appModule</p>
+  <p>
+    <code>import UiKitLibModule from 'ui-kit-lib'</code>
+  </p>
+  <p>
+    <code>imports: [ ..., UiKitLibModule ]</code>
+  </p>
+  <p>src/your-component</p>
+
+  <p>
+    <code>&lt;ui-kit-button&gt;&lt;/ui-kit-button&gt;</code>
+  </p>
+</div>

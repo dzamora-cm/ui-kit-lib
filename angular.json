@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "stories",
       "sourceRoot": "projects/ui-kit-lib/src",
-      "prefix": "pl",
+      "prefix": "ui-kit",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"

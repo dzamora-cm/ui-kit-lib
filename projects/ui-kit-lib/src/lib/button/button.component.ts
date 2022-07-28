@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 type ButtonType = 'success' | 'default' | 'error';
 @Component({
-  selector: 'pl-button',
+  selector: 'ui-kit-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })

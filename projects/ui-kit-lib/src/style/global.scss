@@ -1,2 +1,23 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "~material-icons/iconfont/material-icons.css";
+
+.default {
+  background: rgba(#003547, 0.1);
+  color: #003547;
+  box-shadow: rgba(#003547, 0.3) 1.95px 1.95px 2.6px;
+  border-top: 1px rgba(#003547, 0.1) solid;
+  border-left: 1px rgba(#003547, 0.1) solid;
+}
+.success {
+  background: rgba(#02a676, 0.1);
+  color: #02a676;
+  box-shadow: rgba(#02a676, 0.3) 1.95px 1.95px 2.6px;
+  border-top: 1px rgba(#02a676, 0.1) solid;
+  border-left: 1px rgba(#02a676, 0.1) solid;
+}
+.error {
+  background: rgba(#f24405, 0.1);
+  color: #f24405;
+  box-shadow: rgba(#f24405, 0.3) 1.95px 1.95px 2.6px;
+  border-left: 1px rgba(#f24405, 0.1) solid;
+}

@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 
-<Meta title="Library Example/Intro" />
+<Meta title="Internal Libraries/Intro" />
 
 <style>{`
   .box {
@@ -9,11 +9,45 @@ import { Meta } from "@storybook/addon-docs/blocks";
     background: rgba(233,233,233,0.7);
     border-radius: 3px;
   }
+  h3,p{
+    color: #1a6cb3 !important
+  }
+  strong{
+    color: #391d71
+  }
+  a{
+     color: #391d71  !important;
+     opacity: 0.6
+  }
 `}</style>
 
 # Hello you!
 
 <div class="box">
-  This is the Pattern Library Intro File to provide a guiding path or whatever
-  else you want to do here. Feel free!
+  <h3> Node </h3>
+  <a href="https://nodejs.org/es/"> <pre>https://nodejs.org/es/</pre> </a>
+  <p>
+    Version: <strong>16.15.0</strong>{" "}
+  </p>
+</div>
+<div class="box">
+  <h3> TypeScript </h3>
+
+  <p>
+    Version: <strong>4.6.2</strong>{" "}
+  </p>
+</div>
+<div class="box">
+  <h3> Angular Material </h3>
+  <a href="https://material.angular.io"> <pre>https://material.angular.io</pre> </a>
+  <p>
+    Version: <strong>13.3.9</strong>{" "}
+  </p>
+</div>
+<div class="box">
+  <h3> Storybook </h3>
+  <a href="https://storybook.js.org/"><pre>https://storybook.js.org/</pre></a>
+  <p>
+    Version: <strong>6.5.9</strong>{" "}
+  </p>
 </div>
