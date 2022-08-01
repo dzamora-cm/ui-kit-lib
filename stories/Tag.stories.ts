@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { TagComponent } from '../projects/ui-kit-lib/src/lib/tag/tag.component';
-import { MaterialModule } from 'projects/ui-kit-lib/src/lib/material.module';
+import { TagComponent } from '../projects/src/lib/tag/tag.component';
+import { MaterialModule } from 'projects/src/lib/material.module';
 
 export default {
   component: TagComponent,

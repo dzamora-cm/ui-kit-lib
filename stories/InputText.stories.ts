@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { InputTextComponent } from '../projects/ui-kit-lib/src/lib/input-text/input-text.component';
-import { MaterialModule } from 'projects/ui-kit-lib/src/lib/material.module';
+import { InputTextComponent } from '../projects/src/lib/input-text/input-text.component';
+import { MaterialModule } from 'projects/src/lib/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   FormBuilder,

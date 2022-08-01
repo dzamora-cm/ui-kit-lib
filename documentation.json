@@ -10,7 +10,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-d12da4ccd8bdaef71931efc36f2293617cf6ca7ecc6353b667ec1338cb49c00715771f6208dde31b9d570a603d73b00a453a3e406b2710122aadb14c23a542c7",
-            "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
+            "file": "projects/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -136,7 +136,7 @@
         {
             "name": "InputTextComponent",
             "id": "component-InputTextComponent-16b1f0013d91dd2e295162d5b0d9f6a5fbce9c8de9c324eaa36d3a0eaa6d07724508ebb8f2b631126d7abb553933df2b4d2487565e4f072c227271b2cb22ee64",
-            "file": "projects/ui-kit-lib/src/lib/input-text/input-text.component.ts",
+            "file": "projects/src/lib/input-text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -226,7 +226,7 @@
         {
             "name": "TagComponent",
             "id": "component-TagComponent-af5b686d9beba6cb85a4951f2754e1e65496a3a4a2ef593b46fec4f58daac5cae8e0c5db287e630cc10084ddaa5713aa638a51e2d6e76c9b6b86d307dbfb0233",
-            "file": "projects/ui-kit-lib/src/lib/tag/tag.component.ts",
+            "file": "projects/src/lib/tag/tag.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -312,7 +312,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/ui-kit-lib/src/lib/material.module.ts",
+            "file": "projects/src/lib/material.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatToolbarModule } from '@angular/material/toolbar';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatListModule } from '@angular/material/list';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatSortModule } from '@angular/material/sort';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatGridListModule } from '@angular/material/grid-list';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatTabsModule } from '@angular/material/tabs';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatTreeModule } from '@angular/material/tree';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatStepperModule } from '@angular/material/stepper';\n\nconst myModules: any[] = [\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n];\n\n@NgModule({\n  imports: [...myModules],\n  exports: [...myModules],\n})\nexport class MaterialModule {}\n",
             "children": [
@@ -348,7 +348,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/ui-kit-lib/src/lib/ui-kit-lib.module.ts",
+            "file": "projects/src/lib/ui-kit-lib.module.ts",
             "methods": [],
             "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\nimport { TagComponent } from './tag/tag.component';\nimport { InputTextComponent } from './input-text/input-text.component';\nimport { ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [ButtonComponent, TagComponent, InputTextComponent],\n  imports: [MaterialModule, CommonModule, ReactiveFormsModule],\n  exports: [\n    ButtonComponent,\n    TagComponent,\n    InputTextComponent,\n    ReactiveFormsModule,\n  ],\n})\nexport class UiKitLibModule {}\n",
             "children": [
@@ -459,7 +459,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-kit-lib/src/test.ts",
+                "file": "projects/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -469,7 +469,7 @@
                 "name": "myModules",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-kit-lib/src/lib/material.module.ts",
+                "file": "projects/src/lib/material.module.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
@@ -479,7 +479,7 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-kit-lib/src/test.ts",
+                "file": "projects/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
@@ -562,7 +562,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"default\" | \"error\"",
-                "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
+                "file": "projects/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -573,7 +573,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"default\" | \"error\"",
-                "file": "projects/ui-kit-lib/src/lib/tag/tag.component.ts",
+                "file": "projects/src/lib/tag/tag.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -644,12 +644,12 @@
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "projects/ui-kit-lib/src/test.ts": [
+            "projects/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-kit-lib/src/test.ts",
+                    "file": "projects/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -659,18 +659,18 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-kit-lib/src/test.ts",
+                    "file": "projects/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
                 }
             ],
-            "projects/ui-kit-lib/src/lib/material.module.ts": [
+            "projects/src/lib/material.module.ts": [
                 {
                     "name": "myModules",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-kit-lib/src/lib/material.module.ts",
+                    "file": "projects/src/lib/material.module.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
@@ -745,26 +745,26 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/ui-kit-lib/src/lib/button/button.component.ts": [
+            "projects/src/lib/button/button.component.ts": [
                 {
                     "name": "ButtonType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"success\" | \"default\" | \"error\"",
-                    "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
+                    "file": "projects/src/lib/button/button.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 186
                 }
             ],
-            "projects/ui-kit-lib/src/lib/tag/tag.component.ts": [
+            "projects/src/lib/tag/tag.component.ts": [
                 {
                     "name": "TagType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"success\" | \"default\" | \"error\"",
-                    "file": "projects/ui-kit-lib/src/lib/tag/tag.component.ts",
+                    "file": "projects/src/lib/tag/tag.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -779,7 +779,7 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/ui-kit-lib/src/lib/button/button.component.ts",
+                "filePath": "projects/src/lib/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -788,7 +788,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-kit-lib/src/lib/input-text/input-text.component.ts",
+                "filePath": "projects/src/lib/input-text/input-text.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputTextComponent",
@@ -797,7 +797,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-kit-lib/src/lib/material.module.ts",
+                "filePath": "projects/src/lib/material.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -807,7 +807,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-kit-lib/src/lib/tag/tag.component.ts",
+                "filePath": "projects/src/lib/tag/tag.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TagComponent",
@@ -816,7 +816,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-kit-lib/src/test.ts",
+                "filePath": "projects/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -826,7 +826,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-kit-lib/src/test.ts",
+                "filePath": "projects/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
