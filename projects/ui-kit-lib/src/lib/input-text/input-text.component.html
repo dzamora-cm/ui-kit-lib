@@ -1,0 +1,9 @@
+<mat-form-field *ngIf="formGroup" [formGroup]="formGroup" appearance="outline">
+  <mat-label
+    ><small translate>{{ label }}</small></mat-label
+  >
+  <input matInput [formControlName]="controlName" />
+</mat-form-field>
+<span *ngIf="formGroup?.get(controlName)?.value">{{
+  formGroup?.get(controlName)?.value
+}}</span>

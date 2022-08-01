@@ -2,7 +2,8 @@
   "extends": "../projects/ui-kit-lib/tsconfig.lib.json",
   "compilerOptions": {
     "types": ["node"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true
   },
   "exclude": [
     "../src/test.ts",

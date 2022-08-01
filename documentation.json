@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-c3a0e768fd7b12f93d0d396e7c64c91db08e7cbf326dab8ded03f61761851b8c1bb76ad3b8f8d998cd1b15414224e09dd72f2a001e1f44e202a5528a46173cb6",
+            "id": "component-ButtonComponent-d12da4ccd8bdaef71931efc36f2293617cf6ca7ecc6353b667ec1338cb49c00715771f6208dde31b9d570a603d73b00a453a3e406b2710122aadb14c23a542c7",
             "file": "projects/ui-kit-lib/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -31,8 +31,24 @@
                     "defaultValue": "() => {}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 13,
                     "type": "Function",
+                    "decorators": []
+                },
+                {
+                    "name": "iconAfter",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconBefore",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -49,7 +65,7 @@
                     "defaultValue": "{}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 14,
                     "type": "any",
                     "decorators": []
                 },
@@ -73,7 +89,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 16
                 }
             ],
             "methodsClass": [
@@ -83,7 +99,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -95,11 +111,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype ButtonType = 'success' | 'default' | 'error';\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string | null = null;\n  @Input() type: ButtonType = 'default';\n  @Input() action: Function = () => {};\n  @Input() parameters: any = {};\n\n  actionButton = () => {\n    console.log('from actionButton');\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype ButtonType = 'success' | 'default' | 'error';\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string | null = null;\n  @Input() type: ButtonType = 'default';\n  @Input() iconAfter?: string;\n  @Input() iconBefore?: string;\n  @Input() action: Function = () => {};\n  @Input() parameters: any = {};\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../style/global.scss\";\n.btn {\n  border: 1px solid rgba(47, 47, 47, 0.2);\n  padding: 6px 12px;\n  border-radius: 10px;\n  border: none;\n}\n",
+                    "data": "@import \"../../style/global.scss\";\n.btn {\n  border: 1px solid rgba(47, 47, 47, 0.2);\n  padding: 6px 12px;\n  border-radius: 10px;\n  border: none;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 40px;\n  max-height: 40px;\n  small {\n    margin: 0px 10px;\n    font-size: 13px;\n  }\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -110,12 +126,102 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 17
+                "line": 18
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button class=\"btn {{ type }}\" (click)=\"actionButton()\">\n  {{ label }}\n</button>\n"
+            "templateData": "<button class=\"btn {{ type }}\" (click)=\"actionButton()\">\n  <mat-icon *ngIf=\"iconBefore\">{{ iconBefore }}</mat-icon>\n  <small>{{ label }}</small>\n  <mat-icon *ngIf=\"iconAfter\">{{ iconAfter }}</mat-icon>\n</button>\n"
+        },
+        {
+            "name": "InputTextComponent",
+            "id": "component-InputTextComponent-16b1f0013d91dd2e295162d5b0d9f6a5fbce9c8de9c324eaa36d3a0eaa6d07724508ebb8f2b631126d7abb553933df2b4d2487565e4f072c227271b2cb22ee64",
+            "file": "projects/ui-kit-lib/src/lib/input-text/input-text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-kit-input-text",
+            "styleUrls": [
+                "./input-text.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-text.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "controlName",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "formGroup",
+                    "defaultValue": "new FormBuilder().group({\n    text: new FormControl(),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "FormGroup",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { FormBuilder, FormControl, FormGroup } from '@angular/forms';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: FormGroup = new FormBuilder().group({\n    text: new FormControl(),\n  });\n  @Input() label: any = '';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./input-text.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\" appearance=\"outline\">\n  <mat-label\n    ><small translate>{{ label }}</small></mat-label\n  >\n  <input matInput [formControlName]=\"controlName\" />\n</mat-form-field>\n<span *ngIf=\"formGroup?.get(controlName)?.value\">{{\n  formGroup?.get(controlName)?.value\n}}</span>\n"
         },
         {
             "name": "TagComponent",
@@ -238,13 +344,13 @@
         },
         {
             "name": "UiKitLibModule",
-            "id": "module-UiKitLibModule-26a0cd942d034342d2402dd7bad3b4ee46abbe963369b0c8fa4002a2474163d76ed0cfd7ebe87aaf348c9bec201b62aa7f3339b7297b17b681d40a4d90e301e6",
+            "id": "module-UiKitLibModule-c2916fd2d9eeadaa5b1b761ffabba6e4bccac9be608d99b0743305ec95658713de4f02395497191281801a5b4c105b95fec9436ba96625cb9dc07f9b68fac894",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ui-kit-lib/src/lib/ui-kit-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\nimport { TagComponent } from './tag/tag.component';\n\n@NgModule({\n  declarations: [ButtonComponent, TagComponent],\n  imports: [MaterialModule, CommonModule],\n  exports: [ButtonComponent],\n})\nexport class UiKitLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\nimport { TagComponent } from './tag/tag.component';\nimport { InputTextComponent } from './input-text/input-text.component';\n\n@NgModule({\n  declarations: [ButtonComponent, TagComponent, InputTextComponent],\n  imports: [MaterialModule, CommonModule],\n  exports: [ButtonComponent, TagComponent, InputTextComponent],\n})\nexport class UiKitLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -255,6 +361,9 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "InputTextComponent"
                         },
                         {
                             "name": "TagComponent"
@@ -274,6 +383,12 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "InputTextComponent"
+                        },
+                        {
+                            "name": "TagComponent"
                         }
                     ]
                 },
@@ -311,7 +426,27 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "ButtonErrorWithIconAfter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "ButtonSuccess",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ButtonSuccessWithIconBefore",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -348,6 +483,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "SwitchStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/InputText.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
             },
             {
                 "name": "TagDefault",
@@ -388,6 +533,16 @@
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/InputText.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "(args: InputTextComponent) => ({\n  component: InputTextComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -449,7 +604,27 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "ButtonErrorWithIconAfter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "ButtonSuccess",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ButtonSuccessWithIconBefore",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -500,6 +675,28 @@
                     "deprecationMessage": "",
                     "type": "any[]",
                     "defaultValue": "[\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n]"
+                }
+            ],
+            "stories/InputText.stories.ts": [
+                {
+                    "name": "SwitchStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/InputText.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputTextComponent>",
+                    "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/InputText.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputTextComponent>",
+                    "defaultValue": "(args: InputTextComponent) => ({\n  component: InputTextComponent,\n  props: args,\n})"
                 }
             ],
             "stories/Tag.stories.ts": [
@@ -587,7 +784,16 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-kit-lib/src/lib/input-text/input-text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -654,6 +860,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "ButtonErrorWithIconAfter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "ButtonSuccess",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -661,6 +877,36 @@
             },
             {
                 "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonSuccessWithIconBefore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/InputText.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SwitchStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/InputText.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

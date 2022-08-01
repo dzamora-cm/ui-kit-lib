@@ -8,11 +8,12 @@ type ButtonType = 'success' | 'default' | 'error';
 export class ButtonComponent implements OnInit {
   @Input() label: string | null = null;
   @Input() type: ButtonType = 'default';
+  @Input() iconAfter?: string;
+  @Input() iconBefore?: string;
   @Input() action: Function = () => {};
   @Input() parameters: any = {};
 
   actionButton = () => {
-    console.log('from actionButton');
     this.action(this.parameters);
   };
 

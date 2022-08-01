@@ -1,3 +1,5 @@
 <button class="btn {{ type }}" (click)="actionButton()">
-  {{ label }}
+  <mat-icon *ngIf="iconBefore">{{ iconBefore }}</mat-icon>
+  <small>{{ label }}</small>
+  <mat-icon *ngIf="iconAfter">{{ iconAfter }}</mat-icon>
 </button>

@@ -11,6 +11,10 @@ export default {
       imports: [CommonModule, MaterialModule],
     }),
   ],
+  argTypes: {
+    iconAfter: { control: 'text' },
+    iconBefore: { control: 'text' },
+  },
   excludeStories: /.*Data$/,
   title: 'Button',
 } as Meta;
@@ -36,4 +40,18 @@ export const ButtonSuccess = Template.bind({});
 ButtonSuccess.args = {
   label: 'Button Success',
   type: 'success',
+};
+
+export const ButtonSuccessWithIconBefore = Template.bind({});
+ButtonSuccessWithIconBefore.args = {
+  label: 'Button Success',
+  type: 'success',
+  iconBefore: 'done',
+};
+
+export const ButtonErrorWithIconAfter = Template.bind({});
+ButtonErrorWithIconAfter.args = {
+  label: 'Button Success',
+  type: 'success',
+  iconAfter: 'highlight_off',
 };

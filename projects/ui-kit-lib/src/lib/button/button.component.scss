@@ -4,4 +4,13 @@
   padding: 6px 12px;
   border-radius: 10px;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  max-height: 40px;
+  small {
+    margin: 0px 10px;
+    font-size: 13px;
+  }
 }
