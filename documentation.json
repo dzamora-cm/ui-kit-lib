@@ -344,13 +344,13 @@
         },
         {
             "name": "UiKitLibModule",
-            "id": "module-UiKitLibModule-c2916fd2d9eeadaa5b1b761ffabba6e4bccac9be608d99b0743305ec95658713de4f02395497191281801a5b4c105b95fec9436ba96625cb9dc07f9b68fac894",
+            "id": "module-UiKitLibModule-5a71a5b06f560cdb8dcac93c6cd40b91654172fdc3119404657eff2c0d2caa45e6a7afcca0d39844f109fb3fd22162c2a519f54e50c938a0e20c62c0428b8be9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ui-kit-lib/src/lib/ui-kit-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\nimport { TagComponent } from './tag/tag.component';\nimport { InputTextComponent } from './input-text/input-text.component';\n\n@NgModule({\n  declarations: [ButtonComponent, TagComponent, InputTextComponent],\n  imports: [MaterialModule, CommonModule],\n  exports: [ButtonComponent, TagComponent, InputTextComponent],\n})\nexport class UiKitLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\nimport { TagComponent } from './tag/tag.component';\nimport { InputTextComponent } from './input-text/input-text.component';\nimport { ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [ButtonComponent, TagComponent, InputTextComponent],\n  imports: [MaterialModule, CommonModule, ReactiveFormsModule],\n  exports: [\n    ButtonComponent,\n    TagComponent,\n    InputTextComponent,\n    ReactiveFormsModule,\n  ],\n})\nexport class UiKitLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
