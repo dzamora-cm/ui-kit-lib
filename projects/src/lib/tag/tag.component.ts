@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-type TagType = 'success' | 'default' | 'error';
+type Severity = 'success' | 'info' | 'warning' | 'danger' | 'primary';
+
 @Component({
   selector: 'ui-kit-tag',
   templateUrl: './tag.component.html',
@@ -7,7 +8,7 @@ type TagType = 'success' | 'default' | 'error';
 })
 export class TagComponent implements OnInit {
   @Input() label: string = 'View tag';
-  @Input() type: TagType = 'default';
+  @Input() severity: Severity = 'primary';
 
   constructor() {}
 

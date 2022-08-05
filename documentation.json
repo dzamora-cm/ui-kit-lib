@@ -9,9 +9,11 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d12da4ccd8bdaef71931efc36f2293617cf6ca7ecc6353b667ec1338cb49c00715771f6208dde31b9d570a603d73b00a453a3e406b2710122aadb14c23a542c7",
+            "id": "component-ButtonComponent-6eb4ee31db50aa0e2ea493e0b76ad4e2d4d157e21fb5e69c0041f34f4eb28299e88cfc2f75f832f925f7718afc98da63b3676d475733735ef38528434cd9d11c",
             "file": "projects/src/lib/button/button.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -31,24 +33,8 @@
                     "defaultValue": "() => {}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 19,
                     "type": "Function",
-                    "decorators": []
-                },
-                {
-                    "name": "iconAfter",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "iconBefore",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -56,7 +42,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 17,
                     "type": "string | null",
                     "decorators": []
                 },
@@ -65,16 +51,16 @@
                     "defaultValue": "{}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 20,
                     "type": "any",
                     "decorators": []
                 },
                 {
                     "name": "type",
-                    "defaultValue": "'default'",
+                    "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 18,
                     "type": "ButtonType",
                     "decorators": []
                 }
@@ -89,7 +75,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 22
                 }
             ],
             "methodsClass": [
@@ -99,7 +85,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -111,11 +97,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype ButtonType = 'success' | 'default' | 'error';\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string | null = null;\n  @Input() type: ButtonType = 'default';\n  @Input() iconAfter?: string;\n  @Input() iconBefore?: string;\n  @Input() action: Function = () => {};\n  @Input() parameters: any = {};\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\ntype ButtonType =\n  | 'primary'\n  | 'secondary'\n  | 'success'\n  | 'info'\n  | 'warning'\n  | 'help'\n  | 'danger';\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string | null = null;\n  @Input() type: ButtonType = 'primary';\n  @Input() action: Function = () => {};\n  @Input() parameters: any = {};\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../style/global.scss\";\n.btn {\n  border: 1px solid rgba(47, 47, 47, 0.2);\n  padding: 6px 12px;\n  border-radius: 10px;\n  border: none;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 40px;\n  max-height: 40px;\n  small {\n    margin: 0px 10px;\n    font-size: 13px;\n  }\n}\n",
+                    "data": "",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -126,16 +112,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 18
+                "line": 24
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button class=\"btn {{ type }}\" (click)=\"actionButton()\">\n  <mat-icon *ngIf=\"iconBefore\">{{ iconBefore }}</mat-icon>\n  <small>{{ label }}</small>\n  <mat-icon *ngIf=\"iconAfter\">{{ iconAfter }}</mat-icon>\n</button>\n"
+            "templateData": "<button\n  pButton\n  type=\"button\"\n  label=\"Secondary\"\n  class=\"p-button-{{ type }}\"\n></button>\n"
         },
         {
             "name": "InputTextComponent",
-            "id": "component-InputTextComponent-16b1f0013d91dd2e295162d5b0d9f6a5fbce9c8de9c324eaa36d3a0eaa6d07724508ebb8f2b631126d7abb553933df2b4d2487565e4f072c227271b2cb22ee64",
+            "id": "component-InputTextComponent-08f33b36341488173513a91793d509631d090246b8d9336bee989a6829df16ea9c099a83da7802dbb617df4334da78f4dfa74f36f791edcc2d967bf76060c569",
             "file": "projects/src/lib/input-text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -163,11 +149,11 @@
                 },
                 {
                     "name": "formGroup",
-                    "defaultValue": "new FormBuilder().group({\n    text: new FormControl(),\n  })",
+                    "defaultValue": "new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "FormGroup",
+                    "type": "UntypedFormGroup",
                     "decorators": []
                 },
                 {
@@ -201,7 +187,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { FormBuilder, FormControl, FormGroup } from '@angular/forms';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: FormGroup = new FormBuilder().group({\n    text: new FormControl(),\n  });\n  @Input() label: any = '';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -221,11 +207,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\" appearance=\"outline\">\n  <mat-label\n    ><small translate>{{ label }}</small></mat-label\n  >\n  <input matInput [formControlName]=\"controlName\" />\n</mat-form-field>\n<span *ngIf=\"formGroup?.get(controlName)?.value\">{{\n  formGroup?.get(controlName)?.value\n}}</span>\n"
+            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\" appearance=\"outline\">\n  <input\n    pInputText\n    matInput\n    [formControlName]=\"controlName\"\n    pTooltip=\"Enter your username\"\n  />\n</mat-form-field>\n"
         },
         {
             "name": "TagComponent",
-            "id": "component-TagComponent-af5b686d9beba6cb85a4951f2754e1e65496a3a4a2ef593b46fec4f58daac5cae8e0c5db287e630cc10084ddaa5713aa638a51e2d6e76c9b6b86d307dbfb0233",
+            "id": "component-TagComponent-b0983a4a5c7b1bee7b62e4bc8b06566ee6f734c3ae4ad930565be8c27372cd195bb1e7570a09e59568fceda71ca44d14395f34b1820a020f9526f3d016bea8f4",
             "file": "projects/src/lib/tag/tag.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -247,17 +233,17 @@
                     "defaultValue": "'View tag'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 },
                 {
-                    "name": "type",
-                    "defaultValue": "'default'",
+                    "name": "severity",
+                    "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
-                    "type": "TagType",
+                    "line": 11,
+                    "type": "Severity",
                     "decorators": []
                 }
             ],
@@ -270,7 +256,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -282,11 +268,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype TagType = 'success' | 'default' | 'error';\n@Component({\n  selector: 'ui-kit-tag',\n  templateUrl: './tag.component.html',\n  styleUrls: ['./tag.component.scss'],\n})\nexport class TagComponent implements OnInit {\n  @Input() label: string = 'View tag';\n  @Input() type: TagType = 'default';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype Severity = 'success' | 'info' | 'warning' | 'danger' | 'primary';\n\n@Component({\n  selector: 'ui-kit-tag',\n  templateUrl: './tag.component.html',\n  styleUrls: ['./tag.component.scss'],\n})\nexport class TagComponent implements OnInit {\n  @Input() label: string = 'View tag';\n  @Input() severity: Severity = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../style/global.scss\";\n\n.tag {\n  padding: 6px 10px;\n  border-radius: 4px;\n  box-shadow: none;\n}\n",
+                    "data": "//@import \"../../style/global.scss\";\n\n.tag {\n  padding: 6px 10px;\n  border-radius: 4px;\n  box-shadow: none;\n}\n",
                     "styleUrl": "./tag.component.scss"
                 }
             ],
@@ -297,60 +283,35 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<small class=\"tag {{ type }}\">{{ label }}</small>\n"
+            "templateData": "<p-tag class=\"tag {{ severity }}\" [severity]=\"severity\" [value]=\"label\"></p-tag>\n"
         }
     ],
     "modules": [
         {
-            "name": "MaterialModule",
-            "id": "module-MaterialModule-f4b557540c8771bcd44968b98c47aa14e42b0a02504f5adeabfaf608ea447e7f2c30633b0df168342e6c4c63ff6d558bc6c40885bcafea9b8034fc4c793686fd",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "projects/src/lib/material.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatToolbarModule } from '@angular/material/toolbar';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatListModule } from '@angular/material/list';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatSortModule } from '@angular/material/sort';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatGridListModule } from '@angular/material/grid-list';\nimport { MatCardModule } from '@angular/material/card';\nimport { MatTabsModule } from '@angular/material/tabs';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatTreeModule } from '@angular/material/tree';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatTooltipModule } from '@angular/material/tooltip';\nimport { MatStepperModule } from '@angular/material/stepper';\n\nconst myModules: any[] = [\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n];\n\n@NgModule({\n  imports: [...myModules],\n  exports: [...myModules],\n})\nexport class MaterialModule {}\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": []
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": []
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
             "name": "UiKitLibModule",
-            "id": "module-UiKitLibModule-5a71a5b06f560cdb8dcac93c6cd40b91654172fdc3119404657eff2c0d2caa45e6a7afcca0d39844f109fb3fd22162c2a519f54e50c938a0e20c62c0428b8be9",
+            "id": "module-UiKitLibModule-f3d509ee11f5494fc2542833c4eb04f89efecc9523dc1f13e7d24c40f4659a9e90525b7272100a3bcb00eafe8b0296e4e7db9b5d81442822ef1207f3aede5f56",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/src/lib/ui-kit-lib.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button/button.component';\nimport { MaterialModule } from './material.module';\nimport { TagComponent } from './tag/tag.component';\nimport { InputTextComponent } from './input-text/input-text.component';\nimport { ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [ButtonComponent, TagComponent, InputTextComponent],\n  imports: [MaterialModule, CommonModule, ReactiveFormsModule],\n  exports: [\n    ButtonComponent,\n    TagComponent,\n    InputTextComponent,\n    ReactiveFormsModule,\n  ],\n})\nexport class UiKitLibModule {}\n",
+            "methods": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "sourceCode": "import { NgModule, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { PrimeNGConfig } from 'primeng/api';\nimport { myModules } from './my-modules.module';\n\n@NgModule({\n  declarations: [myModules],\n  imports: [\n    CommonModule,\n    ReactiveFormsModule,\n    BrowserModule,\n    BrowserAnimationsModule,\n  ],\n  exports: [myModules],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class UiKitLibModule implements OnInit {\n  constructor(private primengConfig: PrimeNGConfig) {}\n  ngOnInit(): void {\n    this.primengConfig.ripple = true;\n  }\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -372,11 +333,7 @@
                 },
                 {
                     "type": "imports",
-                    "elements": [
-                        {
-                            "name": "MaterialModule"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "exports",
@@ -406,7 +363,7 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "ButtonDefault",
+                "name": "ButtonDanger",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -416,7 +373,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "ButtonError",
+                "name": "ButtonHelp",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -426,7 +383,27 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "ButtonErrorWithIconAfter",
+                "name": "ButtonInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ButtonPrimary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ButtonSecondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -446,7 +423,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "ButtonSuccessWithIconBefore",
+                "name": "ButtonWarning",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -469,11 +446,11 @@
                 "name": "myModules",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/src/lib/material.module.ts",
+                "file": "projects/src/lib/my-modules.module.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
-                "defaultValue": "[\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n]"
+                "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n]"
             },
             {
                 "name": "require",
@@ -495,7 +472,7 @@
                 "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
             },
             {
-                "name": "TagDefault",
+                "name": "TagDanger",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Tag.stories.ts",
@@ -505,7 +482,17 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "TagError",
+                "name": "TagInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "TagPrimary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Tag.stories.ts",
@@ -516,6 +503,16 @@
             },
             {
                 "name": "TagSuccess",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "TagWarning",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Tag.stories.ts",
@@ -561,7 +558,7 @@
                 "name": "ButtonType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"success\" | \"default\" | \"error\"",
+                "rawtype": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"help\" | \"danger\"",
                 "file": "projects/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -569,10 +566,10 @@
                 "kind": 186
             },
             {
-                "name": "TagType",
+                "name": "Severity",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"success\" | \"default\" | \"error\"",
+                "rawtype": "\"success\" | \"info\" | \"warning\" | \"danger\" | \"primary\"",
                 "file": "projects/src/lib/tag/tag.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -584,7 +581,7 @@
         "groupedVariables": {
             "stories/Button.stories.ts": [
                 {
-                    "name": "ButtonDefault",
+                    "name": "ButtonDanger",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -594,7 +591,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "ButtonError",
+                    "name": "ButtonHelp",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -604,7 +601,27 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "ButtonErrorWithIconAfter",
+                    "name": "ButtonInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ButtonPrimary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ButtonSecondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -624,7 +641,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "ButtonSuccessWithIconBefore",
+                    "name": "ButtonWarning",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -665,16 +682,16 @@
                     "type": "literal type"
                 }
             ],
-            "projects/src/lib/material.module.ts": [
+            "projects/src/lib/my-modules.module.ts": [
                 {
                     "name": "myModules",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/src/lib/material.module.ts",
+                    "file": "projects/src/lib/my-modules.module.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
-                    "defaultValue": "[\n  MatToolbarModule,\n  MatSidenavModule,\n  MatButtonModule,\n  MatListModule,\n  MatMenuModule,\n  MatIconModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatChipsModule,\n  MatTableModule,\n  MatPaginatorModule,\n  MatSortModule,\n  MatCheckboxModule,\n  MatDialogModule,\n  MatProgressBarModule,\n  MatGridListModule,\n  MatCardModule,\n  MatTabsModule,\n  MatDatepickerModule,\n  MatNativeDateModule,\n  MatSelectModule,\n  MatTreeModule,\n  MatProgressSpinnerModule,\n  MatTooltipModule,\n  MatStepperModule,\n]"
+                    "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n]"
                 }
             ],
             "stories/InputText.stories.ts": [
@@ -701,7 +718,7 @@
             ],
             "stories/Tag.stories.ts": [
                 {
-                    "name": "TagDefault",
+                    "name": "TagDanger",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Tag.stories.ts",
@@ -711,7 +728,17 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "TagError",
+                    "name": "TagInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "TagPrimary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Tag.stories.ts",
@@ -722,6 +749,16 @@
                 },
                 {
                     "name": "TagSuccess",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "TagWarning",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Tag.stories.ts",
@@ -750,7 +787,7 @@
                     "name": "ButtonType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"success\" | \"default\" | \"error\"",
+                    "rawtype": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"help\" | \"danger\"",
                     "file": "projects/src/lib/button/button.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -760,10 +797,10 @@
             ],
             "projects/src/lib/tag/tag.component.ts": [
                 {
-                    "name": "TagType",
+                    "name": "Severity",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"success\" | \"default\" | \"error\"",
+                    "rawtype": "\"success\" | \"info\" | \"warning\" | \"danger\" | \"primary\"",
                     "file": "projects/src/lib/tag/tag.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -784,7 +821,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -797,7 +834,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/src/lib/material.module.ts",
+                "filePath": "projects/src/lib/my-modules.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -840,7 +877,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ButtonDefault",
+                "name": "ButtonDanger",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -850,7 +887,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ButtonError",
+                "name": "ButtonHelp",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -860,7 +897,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ButtonErrorWithIconAfter",
+                "name": "ButtonInfo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonPrimary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonSecondary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -880,7 +937,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ButtonSuccessWithIconBefore",
+                "name": "ButtonWarning",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -920,7 +977,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "TagDefault",
+                "name": "TagDanger",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -930,7 +987,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "TagError",
+                "name": "TagInfo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TagPrimary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -941,6 +1008,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "TagSuccess",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TagWarning",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

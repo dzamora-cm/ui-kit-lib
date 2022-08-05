@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { InputTextComponent } from '../projects/src/lib/input-text/input-text.component';
-import { MaterialModule } from 'projects/src/lib/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   FormBuilder,
@@ -9,19 +8,21 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { TooltipModule } from 'primeng/tooltip';
 
 export default {
   component: InputTextComponent,
   decorators: [
     moduleMetadata({
       declarations: [InputTextComponent],
-
       imports: [
         CommonModule,
-        MaterialModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
+        InputTextModule,
+        TooltipModule,
       ],
       providers: [FormBuilder],
     }),
@@ -36,7 +37,7 @@ const Template: Story<InputTextComponent> = (args: InputTextComponent) => ({
   props: args,
 });
 
-export const SwitchStory: Story<InputTextComponent> = () => {
+export const InputTextStory: Story<InputTextComponent> = () => {
   let formGroup = new FormBuilder().group({
     name: new FormControl(),
   });

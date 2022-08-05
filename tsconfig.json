@@ -20,7 +20,7 @@
     "paths": {
       "ui-kit-lib": ["dist/ui-kit-lib/ui-kit-lib", "dist/ui-kit-lib"]
     },
-    "target": "es2017",
+    "target": "es2020",
     "module": "es2020",
     "lib": ["es2020", "dom"]
   },

@@ -1,7 +1,5 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
-import "../projects/src/style/global.scss";
-import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 
 setCompodocJson(docJson);
 

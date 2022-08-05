@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ButtonComponent } from '../projects/src/lib/button/button.component';
-import { MaterialModule } from 'projects/src/lib/material.module';
+import { ButtonModule } from 'primeng/button';
 
 export default {
   component: ButtonComponent,
   decorators: [
     moduleMetadata({
       declarations: [ButtonComponent],
-      imports: [CommonModule, MaterialModule],
+      imports: [CommonModule, ButtonModule],
     }),
   ],
   argTypes: {
@@ -24,16 +24,16 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
 });
 
-export const ButtonDefault = Template.bind({});
-ButtonDefault.args = {
+export const ButtonPrimary = Template.bind({});
+ButtonPrimary.args = {
   label: 'Button Default',
-  type: 'default',
+  type: 'primary',
 };
 
-export const ButtonError = Template.bind({});
-ButtonError.args = {
+export const ButtonSecondary = Template.bind({});
+ButtonSecondary.args = {
   label: 'Button Error',
-  type: 'error',
+  type: 'secondary',
 };
 
 export const ButtonSuccess = Template.bind({});
@@ -42,16 +42,26 @@ ButtonSuccess.args = {
   type: 'success',
 };
 
-export const ButtonSuccessWithIconBefore = Template.bind({});
-ButtonSuccessWithIconBefore.args = {
+export const ButtonInfo = Template.bind({});
+ButtonInfo.args = {
   label: 'Button Success',
-  type: 'success',
-  iconBefore: 'done',
+  type: 'info',
 };
 
-export const ButtonErrorWithIconAfter = Template.bind({});
-ButtonErrorWithIconAfter.args = {
+export const ButtonWarning = Template.bind({});
+ButtonWarning.args = {
   label: 'Button Success',
-  type: 'success',
-  iconAfter: 'highlight_off',
+  type: 'warning',
+};
+
+export const ButtonHelp = Template.bind({});
+ButtonHelp.args = {
+  label: 'Button Success',
+  type: 'help',
+};
+
+export const ButtonDanger = Template.bind({});
+ButtonDanger.args = {
+  label: 'Button Success',
+  type: 'danger',
 };

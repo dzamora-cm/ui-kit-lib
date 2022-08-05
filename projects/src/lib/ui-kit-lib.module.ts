@@ -1,20 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ButtonComponent } from './button/button.component';
-import { MaterialModule } from './material.module';
-import { TagComponent } from './tag/tag.component';
-import { InputTextComponent } from './input-text/input-text.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PrimeNGConfig } from 'primeng/api';
+import { myModules } from './my-modules.module';
 
 @NgModule({
-  declarations: [ButtonComponent, TagComponent, InputTextComponent],
-  imports: [MaterialModule, CommonModule, ReactiveFormsModule],
-  exports: [
-    ButtonComponent,
-    TagComponent,
-    InputTextComponent,
+  declarations: [myModules],
+  imports: [
+    CommonModule,
     ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
   ],
+  exports: [myModules],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class UiKitLibModule {}
+export class UiKitLibModule implements OnInit {
+  constructor(private primengConfig: PrimeNGConfig) {}
+  ngOnInit(): void {
+    this.primengConfig.ripple = true;
+  }
+}

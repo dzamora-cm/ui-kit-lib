@@ -1,23 +1,42 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import "~material-icons/iconfont/material-icons.css";
+:root {
+  --primary-color: #2c6cbf;
+  --secondary-color: #079dd9;
+  --success-color: #88bf0f;
+  --warning-color: #f2c849;
+  --help-color: #1d4859;
+  --danger-color: #d96704;
+  --info-color: #f2c849;
+}
 
-.default {
-  background: rgba(#003547, 0.1);
-  color: #003547;
-  box-shadow: rgba(#003547, 0.3) 1.95px 1.95px 2.6px;
-  border-top: 1px rgba(#003547, 0.1) solid;
-  border-left: 1px rgba(#003547, 0.1) solid;
+button {
+  border: none !important;
+  margin: 3px !important;
 }
-.success {
-  background: rgba(#02a676, 0.1);
-  color: #02a676;
-  box-shadow: rgba(#02a676, 0.3) 1.95px 1.95px 2.6px;
-  border-top: 1px rgba(#02a676, 0.1) solid;
-  border-left: 1px rgba(#02a676, 0.1) solid;
+button.p-button,
+.p-tag {
+  background-color: var(--primary-color);
 }
-.error {
-  background: rgba(#f24405, 0.1);
-  color: #f24405;
-  box-shadow: rgba(#f24405, 0.3) 1.95px 1.95px 2.6px;
-  border-left: 1px rgba(#f24405, 0.1) solid;
+button.p-button-secondary,
+.p-tag-secondary {
+  background-color: var(--secondary-color) !important;
+}
+button.p-button-success,
+.p-tag-success {
+  background-color: var(--success-color) !important;
+}
+button.p-button-info,
+.p-tag-info {
+  background-color: var(--info-color) !important;
+}
+button.p-button-warning,
+.p-tag-warning {
+  background-color: var(--warning-color) !important;
+}
+button.p-button-help,
+.p-tag-help {
+  background-color: var(--help-color) !important;
+}
+button.p-button-danger,
+.p-tag-danger {
+  background-color: var(--danger-color) !important;
 }

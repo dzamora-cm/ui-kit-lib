@@ -1,9 +1,8 @@
 <mat-form-field *ngIf="formGroup" [formGroup]="formGroup" appearance="outline">
-  <mat-label
-    ><small translate>{{ label }}</small></mat-label
-  >
-  <input matInput [formControlName]="controlName" />
+  <input
+    pInputText
+    matInput
+    [formControlName]="controlName"
+    pTooltip="Enter your username"
+  />
 </mat-form-field>
-<span *ngIf="formGroup?.get(controlName)?.value">{{
-  formGroup?.get(controlName)?.value
-}}</span>
