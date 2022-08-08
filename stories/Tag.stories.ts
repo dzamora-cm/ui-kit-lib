@@ -25,25 +25,3 @@ TagSuccess.args = {
   label: 'Tag success',
   severity: 'success',
 };
-
-export const TagInfo = Template.bind({});
-TagInfo.args = {
-  label: 'Tag info',
-  severity: 'info',
-};
-
-export const TagWarning = Template.bind({});
-TagWarning.args = {
-  label: 'Tag warning',
-  severity: 'warning',
-};
-export const TagDanger = Template.bind({});
-TagDanger.args = {
-  label: 'Tag danger',
-  severity: 'danger',
-};
-export const TagPrimary = Template.bind({});
-TagPrimary.args = {
-  label: 'Tag primary',
-  severity: 'primary',
-};

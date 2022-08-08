@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-6eb4ee31db50aa0e2ea493e0b76ad4e2d4d157e21fb5e69c0041f34f4eb28299e88cfc2f75f832f925f7718afc98da63b3676d475733735ef38528434cd9d11c",
+            "id": "component-ButtonComponent-d2af0dc4b4633aafad677d1e4e2055906ace1fa02f07fc43593a152dd73929d34589563335ed65d3b439a39f9027886e313bd96052f973edbb444efea47b534c",
             "file": "projects/src/lib/button/button.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -33,17 +33,44 @@
                     "defaultValue": "() => {}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 32,
                     "type": "Function",
                     "decorators": []
                 },
                 {
-                    "name": "label",
-                    "defaultValue": "null",
+                    "name": "icon",
+                    "defaultValue": "'pi-search'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
-                    "type": "string | null",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPos",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "iconPosType",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Hello Word'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ngStyle",
+                    "defaultValue": "{ width: '100%' }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "literal type",
                     "decorators": []
                 },
                 {
@@ -51,8 +78,44 @@
                     "defaultValue": "{}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 31,
                     "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'large'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "SizesType",
+                    "decorators": []
+                },
+                {
+                    "name": "style",
+                    "defaultValue": "'loud'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "styleType",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipPosition",
+                    "defaultValue": "'top'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "tooltipPositionType",
                     "decorators": []
                 },
                 {
@@ -60,7 +123,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 23,
                     "type": "ButtonType",
                     "decorators": []
                 }
@@ -75,7 +138,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 34
                 }
             ],
             "methodsClass": [
@@ -85,7 +148,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 40,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -97,7 +160,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\ntype ButtonType =\n  | 'primary'\n  | 'secondary'\n  | 'success'\n  | 'info'\n  | 'warning'\n  | 'help'\n  | 'danger';\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string | null = null;\n  @Input() type: ButtonType = 'primary';\n  @Input() action: Function = () => {};\n  @Input() parameters: any = {};\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\ntype ButtonType =\n  | 'primary'\n  | 'secondary'\n  | 'success'\n  | 'info'\n  | 'warning'\n  | 'help'\n  | 'danger';\ntype SizesType = 'large' | 'medium' | 'small';\ntype styleType = 'loud' | 'quiet' | 'transparent';\ntype iconPosType = 'left' | 'right';\ntype tooltipPositionType = 'left' | 'right' | 'top' | 'bottom';\n\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string = 'Hello Word';\n  @Input() type: ButtonType = 'primary';\n  @Input() size: SizesType = 'large';\n  @Input() style: styleType = 'loud';\n  @Input() icon: string = 'pi-search';\n  @Input() ngStyle: { [klass: string]: any } = { width: '100%' };\n  @Input() iconPos: iconPosType = 'left';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: tooltipPositionType = 'top';\n  @Input() parameters: any = {};\n  @Input() action: Function = () => {};\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -112,12 +175,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 24
+                "line": 36
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button\n  pButton\n  type=\"button\"\n  label=\"Secondary\"\n  class=\"p-button-{{ type }}\"\n></button>\n"
+            "templateData": "<p-button\n  [ngStyle]=\"ngStyle\"\n  type=\"button\"\n  label=\"{{ label }}\"\n  class=\"p-button-{{ type }} {{ size }} {{ type }}-{{ style }}\"\n  icon=\"pi {{ icon }}\"\n  iconPos=\"{{ iconPos }}\"\n  [pTooltip]=\"tooltip\"\n  [tooltipPosition]=\"tooltipPosition\"\n></p-button>\n"
         },
         {
             "name": "InputTextComponent",
@@ -363,67 +426,7 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "ButtonDanger",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "ButtonHelp",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "ButtonInfo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "ButtonPrimary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "ButtonSecondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "ButtonSuccess",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "ButtonWarning",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -441,6 +444,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "InputTextStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/InputText.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTextComponent>",
+                "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
             },
             {
                 "name": "myModules",
@@ -462,57 +475,7 @@
                 "type": "literal type"
             },
             {
-                "name": "SwitchStory",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/InputText.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
-            },
-            {
-                "name": "TagDanger",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "TagInfo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "TagPrimary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "TagSuccess",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Tag.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "TagWarning",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Tag.stories.ts",
@@ -566,11 +529,55 @@
                 "kind": 186
             },
             {
+                "name": "iconPosType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"left\" | \"right\"",
+                "file": "projects/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
                 "name": "Severity",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"info\" | \"warning\" | \"danger\" | \"primary\"",
                 "file": "projects/src/lib/tag/tag.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "SizesType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"large\" | \"medium\" | \"small\"",
+                "file": "projects/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "styleType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"loud\" | \"quiet\" | \"transparent\"",
+                "file": "projects/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "tooltipPositionType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+                "file": "projects/src/lib/button/button.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -581,67 +588,7 @@
         "groupedVariables": {
             "stories/Button.stories.ts": [
                 {
-                    "name": "ButtonDanger",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ButtonHelp",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ButtonInfo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
                     "name": "ButtonPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ButtonSecondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ButtonSuccess",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "ButtonWarning",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -682,21 +629,9 @@
                     "type": "literal type"
                 }
             ],
-            "projects/src/lib/my-modules.module.ts": [
-                {
-                    "name": "myModules",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/src/lib/my-modules.module.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n]"
-                }
-            ],
             "stories/InputText.stories.ts": [
                 {
-                    "name": "SwitchStory",
+                    "name": "InputTextStory",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/InputText.stories.ts",
@@ -716,49 +651,21 @@
                     "defaultValue": "(args: InputTextComponent) => ({\n  component: InputTextComponent,\n  props: args,\n})"
                 }
             ],
+            "projects/src/lib/my-modules.module.ts": [
+                {
+                    "name": "myModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/src/lib/my-modules.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n]"
+                }
+            ],
             "stories/Tag.stories.ts": [
                 {
-                    "name": "TagDanger",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "TagInfo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "TagPrimary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
                     "name": "TagSuccess",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Tag.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "TagWarning",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Tag.stories.ts",
@@ -793,6 +700,50 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 186
+                },
+                {
+                    "name": "iconPosType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"left\" | \"right\"",
+                    "file": "projects/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "SizesType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"large\" | \"medium\" | \"small\"",
+                    "file": "projects/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "styleType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"loud\" | \"quiet\" | \"transparent\"",
+                    "file": "projects/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "tooltipPositionType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+                    "file": "projects/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
                 }
             ],
             "projects/src/lib/tag/tag.component.ts": [
@@ -821,7 +772,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -877,36 +828,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ButtonDanger",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ButtonHelp",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ButtonInfo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "ButtonPrimary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -917,36 +838,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ButtonSecondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ButtonSuccess",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ButtonWarning",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -957,7 +848,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SwitchStory",
+                "name": "InputTextStory",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -968,36 +859,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Tag.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TagDanger",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Tag.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TagInfo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Tag.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TagPrimary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1008,16 +869,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "TagSuccess",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Tag.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TagWarning",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

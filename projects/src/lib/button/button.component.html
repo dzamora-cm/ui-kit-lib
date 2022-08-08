@@ -1,6 +1,10 @@
-<button
-  pButton
+<p-button
+  [ngStyle]="ngStyle"
   type="button"
-  label="Secondary"
-  class="p-button-{{ type }}"
-></button>
+  label="{{ label }}"
+  class="p-button-{{ type }} {{ size }} {{ type }}-{{ style }}"
+  icon="pi {{ icon }}"
+  iconPos="{{ iconPos }}"
+  [pTooltip]="tooltip"
+  [tooltipPosition]="tooltipPosition"
+></p-button>

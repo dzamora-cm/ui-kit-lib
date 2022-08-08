@@ -1,16 +1,39 @@
 :root {
+  --primary-color-50: #d6e3f4;
   --primary-color: #2c6cbf;
   --secondary-color: #079dd9;
+  --secondary-color-50: #d4ecf5;
   --success-color: #88bf0f;
+  --success-color-50: #e7f1d2;
   --warning-color: #f2c849;
+  --warning-color-50: #f4efde;
   --help-color: #1d4859;
+  --help-color-50: #ddf1f9;
   --danger-color: #d96704;
-  --info-color: #f2c849;
+  --danger-color-50: #f3e3d5;
+  --info-color: #9370db;
+  --info-color-50: #e1d7f4;
 }
-
 button {
   border: none !important;
-  margin: 3px !important;
+  margin: 8q;
+  border-radius: 5px !important;
+  font-weight: 200 !important;
+  font-size: 12px !important;
+}
+button.large {
+  padding: 10q 24q;
+  font-size: 16px !important;
+  margin: 8q;
+}
+button.medium {
+  padding: 10q 16q;
+  font-size: 14px !important;
+  margin: 6q;
+}
+button.small {
+  padding: 5q 8q;
+  margin: 4q;
 }
 button.p-button,
 .p-tag {
@@ -39,4 +62,88 @@ button.p-button-help,
 button.p-button-danger,
 .p-tag-danger {
   background-color: var(--danger-color) !important;
+}
+button.primary-quiet {
+  background-color: var(--primary-color-50);
+  span {
+    color: var(--primary-color);
+  }
+}
+button.primary-transparent {
+  background-color: transparent;
+  span {
+    color: var(--primary-color);
+  }
+}
+button.secondary-quiet {
+  background-color: var(--secondary-color-50) !important;
+  span {
+    color: var(--secondary-color) !important;
+  }
+}
+button.secondary-transparent {
+  background-color: transparent !important;
+  span {
+    color: var(--secondary-color) !important;
+  }
+}
+button.success-quiet {
+  background-color: var(--success-color-50) !important;
+  span {
+    color: var(--success-color) !important;
+  }
+}
+button.success-transparent {
+  background-color: transparent !important;
+  span {
+    color: var(--success-color) !important;
+  }
+}
+button.warning-quiet {
+  background-color: var(--warning-color-50) !important;
+  span {
+    color: var(--warning-color) !important;
+  }
+}
+button.warning-transparent {
+  background-color: transparent !important;
+  span {
+    color: var(--warning-color) !important;
+  }
+}
+button.help-quiet {
+  background-color: var(--help-color-50) !important;
+  span {
+    color: var(--help-color) !important;
+  }
+}
+button.help-transparent {
+  background-color: transparent !important;
+  span {
+    color: var(--help-color) !important;
+  }
+}
+button.danger-quiet {
+  background-color: var(--danger-color-50) !important;
+  span {
+    color: var(--danger-color) !important;
+  }
+}
+button.danger-transparent {
+  background-color: transparent !important;
+  span {
+    color: var(--danger-color) !important;
+  }
+}
+button.info-quiet {
+  background-color: var(--info-color-50) !important;
+  span {
+    color: var(--info-color) !important;
+  }
+}
+button.info-transparent {
+  background-color: transparent !important;
+  span {
+    color: var(--info-color) !important;
+  }
 }

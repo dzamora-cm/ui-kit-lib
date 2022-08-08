@@ -7,6 +7,11 @@ type ButtonType =
   | 'warning'
   | 'help'
   | 'danger';
+type SizesType = 'large' | 'medium' | 'small';
+type styleType = 'loud' | 'quiet' | 'transparent';
+type iconPosType = 'left' | 'right';
+type tooltipPositionType = 'left' | 'right' | 'top' | 'bottom';
+
 @Component({
   selector: 'ui-kit-button',
   templateUrl: './button.component.html',
@@ -14,10 +19,17 @@ type ButtonType =
   encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent implements OnInit {
-  @Input() label: string | null = null;
+  @Input() label: string = 'Hello Word';
   @Input() type: ButtonType = 'primary';
-  @Input() action: Function = () => {};
+  @Input() size: SizesType = 'large';
+  @Input() style: styleType = 'loud';
+  @Input() icon: string = 'pi-search';
+  @Input() ngStyle: { [klass: string]: any } = { width: '100%' };
+  @Input() iconPos: iconPosType = 'left';
+  @Input() tooltip: string = '';
+  @Input() tooltipPosition: tooltipPositionType = 'top';
   @Input() parameters: any = {};
+  @Input() action: Function = () => {};
 
   actionButton = () => {
     this.action(this.parameters);
