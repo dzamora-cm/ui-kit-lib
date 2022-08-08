@@ -1,0 +1,16 @@
+<mat-form-field
+  class="ui-kit-dropdown"
+  *ngIf="formGroup"
+  [formGroup]="formGroup"
+>
+  <p>Single</p>
+  <p-dropdown
+    matInput
+    [formControlName]="controlName"
+    [showClear]="true"
+    [options]="options"
+    optionValue="code"
+    optionLabel="name"
+  ></p-dropdown>
+</mat-form-field>
+{{ formGroup.get(controlName)?.value }}

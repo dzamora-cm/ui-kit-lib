@@ -46,8 +46,6 @@
       "architect": {
         "build": {
           "options": {
-            "tsConfig": "tsconfig.json",
-            "assets": ["src/favicon.ico", "src/assets"],
             "inlineStyleLanguage": "scss",
             "styles": [
               "node_modules/primeng/resources/themes/lara-light-teal/theme.css",

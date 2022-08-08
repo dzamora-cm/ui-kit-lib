@@ -1,10 +1,12 @@
 <p-button
-  [ngStyle]="ngStyle"
+  [loading]="loading"
   type="button"
   label="{{ label }}"
   class="p-button-{{ type }} {{ size }} {{ type }}-{{ style }}"
-  icon="pi {{ icon }}"
-  iconPos="{{ iconPos }}"
+  icon="pi {{ !loading ? icon : '' }}"
+  iconPos="{{ !loading ? iconPos : '' }}"
   [pTooltip]="tooltip"
   [tooltipPosition]="tooltipPosition"
-></p-button>
+  [badge]="badge"
+>
+</p-button>

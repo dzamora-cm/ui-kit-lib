@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'ui-kit-input-text',
@@ -9,11 +13,13 @@ import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angul
 export class InputTextComponent implements OnInit {
   @Input() controlName: any = 'text';
   @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({
-    text: new UntypedFormControl(),
+    [this.controlName]: new UntypedFormControl(),
   });
   @Input() label: any = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.formGroup);
+  }
 }

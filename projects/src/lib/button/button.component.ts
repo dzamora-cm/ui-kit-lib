@@ -24,12 +24,13 @@ export class ButtonComponent implements OnInit {
   @Input() size: SizesType = 'large';
   @Input() style: styleType = 'loud';
   @Input() icon: string = 'pi-search';
-  @Input() ngStyle: { [klass: string]: any } = { width: '100%' };
   @Input() iconPos: iconPosType = 'left';
   @Input() tooltip: string = '';
   @Input() tooltipPosition: tooltipPositionType = 'top';
   @Input() parameters: any = {};
   @Input() action: Function = () => {};
+  @Input() loading: boolean = false;
+  @Input() badge: string = '';
 
   actionButton = () => {
     this.action(this.parameters);
