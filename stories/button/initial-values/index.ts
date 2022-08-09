@@ -9,3 +9,6 @@ export const buttonTypes = [
 ];
 
 export const sizesTypes = ['large', 'medium', 'small'];
+export const styleType = ['loud', 'quiet', 'transparent'];
+export const iconPosType = ['left', 'right'];
+export const tooltipPositionType = ['left', 'right', 'top', 'bottom'];

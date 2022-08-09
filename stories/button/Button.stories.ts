@@ -3,7 +3,13 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ButtonComponent } from '../../projects/src/lib/button/button.component';
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
-import { buttonTypes, sizesTypes } from './initial-values';
+import {
+  buttonTypes,
+  sizesTypes,
+  styleType,
+  iconPosType,
+  tooltipPositionType,
+} from './initial-values';
 
 export default {
   component: ButtonComponent,
@@ -22,6 +28,18 @@ export default {
       options: sizesTypes,
       control: { type: 'select' },
     },
+    style: {
+      options: styleType,
+      control: { type: 'select' },
+    },
+    iconPos: {
+      options: iconPosType,
+      control: { type: 'radio' },
+    },
+    tooltipPosition: {
+      options: tooltipPositionType,
+      control: { type: 'radio' },
+    },
   },
   excludeStories: /.*Data$/,
   title: 'Button',
@@ -37,6 +55,12 @@ ButtonPrimary.args = {
   label: 'Button Default',
   type: 'primary',
   size: 'large',
+  icon: 'pi-search',
+  tooltip: 'Hello word',
+  parameters: {},
+  action: () => {},
+  loading: false,
+  badge: '',
 };
 
 export const ButtonSecondary = Template.bind({});
@@ -44,4 +68,10 @@ ButtonSecondary.args = {
   label: 'Button Default',
   type: 'secondary',
   size: 'large',
+  icon: 'pi-search',
+  tooltip: 'Hello word',
+  parameters: {},
+  action: () => {},
+  loading: true,
+  badge: 'H',
 };

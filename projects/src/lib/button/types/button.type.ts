@@ -7,6 +7,6 @@ export type ButtonType =
   | 'help'
   | 'danger';
 export type SizesType = 'large' | 'medium' | 'small';
-export type styleType = 'loud' | 'quiet' | 'transparent';
-export type iconPosType = 'left' | 'right';
-export type tooltipPositionType = 'left' | 'right' | 'top' | 'bottom';
+export type StyleType = 'loud' | 'quiet' | 'transparent';
+export type IconPosType = 'left' | 'right';
+export type TooltipPositionType = 'left' | 'right' | 'top' | 'bottom';

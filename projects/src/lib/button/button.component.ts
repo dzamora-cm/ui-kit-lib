@@ -2,9 +2,9 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {
   ButtonType,
   SizesType,
-  styleType,
-  iconPosType,
-  tooltipPositionType,
+  StyleType,
+  IconPosType,
+  TooltipPositionType,
 } from './types/button.type';
 
 @Component({
@@ -17,11 +17,11 @@ export class ButtonComponent implements OnInit {
   @Input() label: string = 'Hello Word';
   @Input() type: ButtonType = 'primary';
   @Input() size: SizesType = 'large';
-  @Input() style: styleType = 'loud';
+  @Input() style: StyleType = 'loud';
   @Input() icon: string = 'pi-search';
-  @Input() iconPos: iconPosType = 'left';
+  @Input() iconPos: IconPosType = 'left';
   @Input() tooltip: string = '';
-  @Input() tooltipPosition: tooltipPositionType = 'top';
+  @Input() tooltipPosition: TooltipPositionType = 'top';
   @Input() parameters: any = {};
   @Input() action: Function = () => {};
   @Input() loading: boolean = false;

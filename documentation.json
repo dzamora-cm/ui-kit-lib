@@ -630,6 +630,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "buttonTypes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  'primary',\n  'secondary',\n  'success',\n  'info',\n  'warning',\n  'help',\n  'danger',\n]"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -687,6 +697,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "sizesTypes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['large', 'medium', 'small']"
             },
             {
                 "name": "TagSuccess",
@@ -830,6 +850,28 @@
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "stories/button/initial-values/index.ts": [
+                {
+                    "name": "buttonTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  'primary',\n  'secondary',\n  'success',\n  'info',\n  'warning',\n  'help',\n  'danger',\n]"
+                },
+                {
+                    "name": "sizesTypes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['large', 'medium', 'small']"
                 }
             ],
             "projects/src/test.ts": [
@@ -1125,6 +1167,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "buttonTypes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "sizesTypes",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
