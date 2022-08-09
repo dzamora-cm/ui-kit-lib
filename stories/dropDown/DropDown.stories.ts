@@ -24,7 +24,7 @@ export default {
     label: { control: { type: 'text' } },
   },
   excludeStories: /.*Data$/,
-  title: 'DropDown',
+  title: 'FORM',
 } as Meta;
 
 const Template: Story<DropdownComponent> = (args: DropdownComponent) => ({

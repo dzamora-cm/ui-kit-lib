@@ -17,8 +17,18 @@ mat-form-field {
     font-size: 15px;
     color: var(--neutro-color);
   }
+  input.disabled,
+  input.readonly {
+    border: 1px dashed var(--neutro-color-50) !important;
+  }
 }
 
 ::-webkit-input-placeholder {
   opacity: 0.4;
+}
+
+.p-dropdown-clear-icon,
+.p-dropdown-clear-icon,
+.p-inputnumber-clear-icon {
+  color: var(--danger-color) !important;
 }

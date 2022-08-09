@@ -1,0 +1,26 @@
+<mat-form-field
+  *ngIf="formGroup"
+  [formGroup]="formGroup"
+  class="ui-ki-lib-input-number"
+>
+  <p for="stacked">{{ label }}</p>
+  <p-inputNumber
+    pInputText
+    matInput
+    [formControlName]="controlName"
+    [pTooltip]="tooltip"
+    [mode]="mode"
+    [currency]="currency"
+    [showButtons]="showButtons"
+    [inputId]="inputId"
+    [min]="min"
+    [max]="max"
+    [showClear]="showClear"
+    [step]="step"
+    [locale]="locale"
+    [suffix]="suffix"
+    [prefix]="prefix"
+    [readonly]="readonly"
+  >
+  </p-inputNumber>
+</mat-form-field>

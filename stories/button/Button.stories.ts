@@ -42,7 +42,7 @@ export default {
     },
   },
   excludeStories: /.*Data$/,
-  title: 'Button',
+  title: 'BUTTON',
 } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({

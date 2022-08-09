@@ -2,14 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { InputTextComponent } from '../../projects/src/lib/input-text/input-text.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  FormBuilder,
-  FormControl,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
+import { iconPosType } from 'stories/button/initial-values';
 
 export default {
   component: InputTextComponent,
@@ -29,10 +25,16 @@ export default {
   ],
   argTypes: {
     label: { control: { type: 'text' } },
+    tooltip: { control: { type: 'text' } },
+    tooltipIcon: { control: { type: 'text' } },
     placeholder: { control: { type: 'text' } },
+    iconPos: {
+      options: iconPosType,
+      control: { type: 'radio' },
+    },
   },
   excludeStories: /.*Data$/,
-  title: 'InputText',
+  title: 'FORM',
 } as Meta;
 
 const Template: Story<InputTextComponent> = (args: InputTextComponent) => ({
@@ -44,6 +46,8 @@ export const InputText = Template.bind({});
 InputText.args = {
   label: 'Nombre y apellido',
   placeholder: 'Ejm. Capmotion',
+  disabled: false,
+  readonly: false,
 };
 
 /*export const InputTextStory: Story<InputTextComponent> = () => {

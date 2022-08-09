@@ -12,7 +12,7 @@ export default {
     }),
   ],
   excludeStories: /.*Data$/,
-  title: 'Tag',
+  title: 'MISC',
 } as Meta;
 
 const Template: Story<TagComponent> = (args: TagComponent) => ({

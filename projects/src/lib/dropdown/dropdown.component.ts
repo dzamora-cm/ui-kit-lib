@@ -24,6 +24,8 @@ export class DropdownComponent {
   @Input() label: string = 'Hello Word';
   @Input() options: Option[] = [];
   @Input() showClear: boolean = false;
+  @Input() inputId: string = this.controlName;
+
   selectedCode: Option = { name: '', code: '' };
 
   constructor() {}

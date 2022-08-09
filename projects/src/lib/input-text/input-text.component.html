@@ -1,10 +1,22 @@
-<mat-form-field *ngIf="formGroup" [formGroup]="formGroup" appearance="outline">
+<mat-form-field *ngIf="formGroup" [formGroup]="formGroup">
   <p>{{ label }}</p>
-  <input
-    pInputText
-    matInput
-    [formControlName]="controlName"
-    pTooltip="Enter your username"
-    [placeholder]="placeholder"
-  />
+  <span class="p-input-icon-{{ iconPos }}">
+    <i
+      class="pi {{ icon }}"
+      [pTooltip]="tooltipIcon"
+      [tooltipPosition]="'top'"
+    ></i>
+    <input
+      class="{{ disabled ? 'disabled' : '' }} {{ readonly ? 'readonly' : '' }} "
+      pInputText
+      matInput
+      [formControlName]="controlName"
+      [pTooltip]="tooltip"
+      [placeholder]="placeholder"
+      [id]="inputId"
+      [tooltipPosition]="tooltipPosition"
+      [disabled]="disabled"
+      [readonly]="readonly"
+    />
+  </span>
 </mat-form-field>

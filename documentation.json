@@ -316,7 +316,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".ui-kit-dropdown {\n  p {\n    margin: 5px 0px;\n    color: var(--primary-color) !important;\n  }\n}\n.p-dropdown:not(.p-disabled).p-focus,\n.p-dropdown:not(.p-disabled):hover {\n  border-color: var(--primary-color) !important;\n  box-shadow: none;\n}\n",
+                    "data": ".ui-kit-dropdown {\n  .p-dropdown-trigger-icon,\n  .p-dropdown-label {\n    color: var(--primary-color);\n  }\n  .p-dropdown-clear-icon,\n  .p-dropdown-clear-icon {\n    color: var(--danger-color);\n  }\n}\n",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -332,8 +332,127 @@
             "templateData": "<mat-form-field\n  class=\"ui-kit-dropdown\"\n  *ngIf=\"formGroup\"\n  [formGroup]=\"formGroup\"\n>\n  <p>{{ label }}</p>\n  <p-dropdown\n    matInput\n    [formControlName]=\"controlName\"\n    [showClear]=\"showClear\"\n    [options]=\"options\"\n    optionValue=\"code\"\n    optionLabel=\"name\"\n  ></p-dropdown>\n</mat-form-field>\n"
         },
         {
+            "name": "InputNumberComponent",
+            "id": "component-InputNumberComponent-66b13f84349ab8e5209c140fcb46e1792d2cc894802576f18a4521be2ca77773f9b099388ae6e304772519fb675b36d21caee0dcda0d37409e994d8c50df5ea0",
+            "file": "projects/src/lib/input-number/input-number.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-kit-input-number",
+            "styleUrls": [
+                "./input-number.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-number.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "controlName",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "formGroup",
+                    "defaultValue": "new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "UntypedFormGroup",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipPosition",
+                    "defaultValue": "'top'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "TooltipPositionType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "value17",
+                    "defaultValue": "20",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\nimport { TooltipPositionType } from '../button/types/button.type';\n\n@Component({\n  selector: 'ui-kit-input-number',\n  templateUrl: './input-number.component.html',\n  styleUrls: ['./input-number.component.scss'],\n})\nexport class InputNumberComponent implements OnInit {\n  value17: number = 20;\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./input-number.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 22
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\">\n  <p>{{ label }}</p>\n  <p-inputNumber\n    pInputText\n    matInput\n    [formControlName]=\"controlName\"\n    [pTooltip]=\"tooltip\"\n    inputId=\"stacked\"\n    mode=\"currency\"\n    currency=\"USD\"\n  >\n  </p-inputNumber>\n</mat-form-field>\n"
+        },
+        {
             "name": "InputTextComponent",
-            "id": "component-InputTextComponent-2502c732358eb590a16ddaa9ae5af2e188a536bcc12175572b8733fc59aec70bd25163a9ac9ca90322393a6cc10350a1f3ce3bf8c0e5ebdb78925b68e444feb4",
+            "id": "component-InputTextComponent-e45a77770add4f1515f3219e5634c4aec1363e80f43a316ca717612622bba1fa165d1854d8b57e99c2a79d250fcf669cc61e22e48edd3c9bbf7cf153327b0a5a",
             "file": "projects/src/lib/input-text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -355,7 +474,7 @@
                     "defaultValue": "'text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "any",
                     "decorators": []
                 },
@@ -364,7 +483,7 @@
                     "defaultValue": "new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "UntypedFormGroup",
                     "decorators": []
                 },
@@ -373,8 +492,35 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltipPosition",
+                    "defaultValue": "'top'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "TooltipPositionType",
                     "decorators": []
                 }
             ],
@@ -387,7 +533,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -399,7 +545,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n\n  constructor() {}\n\n  ngOnInit(): void {\n    console.log(this.formGroup);\n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\nimport { TooltipPositionType } from '../button/types/button.type';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n  @Input() placeholder: any = '';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n\n  constructor() {}\n\n  ngOnInit(): void {\n    console.log(this.formGroup);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -414,12 +560,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 18
+                "line": 22
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\" appearance=\"outline\">\n  <input\n    pInputText\n    matInput\n    [formControlName]=\"controlName\"\n    pTooltip=\"Enter your username\"\n  />\n</mat-form-field>\n"
+            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\">\n  <p>{{ label }}</p>\n  <input\n    pInputText\n    matInput\n    [formControlName]=\"controlName\"\n    [pTooltip]=\"tooltip\"\n    [placeholder]=\"placeholder\"\n  />\n</mat-form-field>\n"
         },
         {
             "name": "TagComponent",
@@ -506,13 +652,13 @@
     "modules": [
         {
             "name": "primeNgModule",
-            "id": "module-primeNgModule-9a3961c79632fe85ce5b29898d41cf052929f2449254df8cffe98f1406deec79b36cf3687131f41195903b6459d0526fad1664a3156d3da403187c91eae13a5d",
+            "id": "module-primeNgModule-21466f1e44952581a7ff7435d5dfd8e81596f47176d7416a5b134b2962f9eae04ba2321b16f0a118f96c6ed0f6da883acabb82d0da63606a5b82f37daa92bdbf",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/src/lib/prime-ng.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { TooltipModule } from 'primeng/tooltip';\nimport { DropdownModule } from 'primeng/dropdown';\n\nconst primeNgModules: any[] = [\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n];\n\n@NgModule({\n  imports: [...primeNgModules],\n  exports: [...primeNgModules],\n})\nexport class primeNgModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { TooltipModule } from 'primeng/tooltip';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { InputNumberModule } from 'primeng/inputnumber';\n\nconst primeNgModules: any[] = [\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n];\n\n@NgModule({\n  imports: [...primeNgModules],\n  exports: [...primeNgModules],\n})\nexport class primeNgModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -575,6 +721,9 @@
                             "name": "DropdownComponent"
                         },
                         {
+                            "name": "InputNumberComponent"
+                        },
+                        {
                             "name": "InputTextComponent"
                         },
                         {
@@ -598,6 +747,9 @@
                         },
                         {
                             "name": "DropdownComponent"
+                        },
+                        {
+                            "name": "InputNumberComponent"
                         },
                         {
                             "name": "InputTextComponent"
@@ -691,14 +843,24 @@
                 "defaultValue": "['left', 'right']"
             },
             {
-                "name": "InputTextStory",
+                "name": "InputNumber",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/input/InputNumber.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "InputText",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/input/InputText.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<InputTextComponent>",
-                "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "myModules",
@@ -708,7 +870,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
-                "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n  DropdownComponent,\n]"
+                "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n  DropdownComponent,\n  InputNumberComponent,\n]"
             },
             {
                 "name": "primeNgModules",
@@ -718,7 +880,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
-                "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n]"
+                "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n]"
             },
             {
                 "name": "require",
@@ -763,21 +925,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
+                "file": "stories/input/InputNumber.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/dropDown/DropDown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<DropdownComponent>",
-                "defaultValue": "(args: DropdownComponent) => ({\n  component: DropdownComponent,\n  props: args,\n})"
+                "type": "Story<InputNumberComponent>",
+                "defaultValue": "(args: InputNumberComponent) => ({\n  component: InputNumberComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -793,11 +945,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/dropDown/DropDown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DropdownComponent>",
+                "defaultValue": "(args: DropdownComponent) => ({\n  component: DropdownComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/tag/Tag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<TagComponent>",
                 "defaultValue": "(args: TagComponent) => ({\n  component: TagComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "tooltipPositionType",
@@ -1020,16 +1192,38 @@
                     "defaultValue": "(args: DropdownComponent) => ({\n  component: DropdownComponent,\n  props: args,\n})"
                 }
             ],
+            "stories/input/InputNumber.stories.ts": [
+                {
+                    "name": "InputNumber",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/input/InputNumber.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/input/InputNumber.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputNumberComponent>",
+                    "defaultValue": "(args: InputNumberComponent) => ({\n  component: InputNumberComponent,\n  props: args,\n})"
+                }
+            ],
             "stories/input/InputText.stories.ts": [
                 {
-                    "name": "InputTextStory",
+                    "name": "InputText",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/input/InputText.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<InputTextComponent>",
-                    "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    name: new FormControl(),\n  });\n  const label = 'Text label';\n\n  return {\n    component: InputTextComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'name',\n      label,\n    },\n  };\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "Template",
@@ -1051,7 +1245,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
-                    "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n  DropdownComponent,\n]"
+                    "defaultValue": "[\n  ButtonComponent,\n  TagComponent,\n  InputTextComponent,\n  DropdownComponent,\n  InputNumberComponent,\n]"
                 }
             ],
             "projects/src/lib/prime-ng.module.ts": [
@@ -1063,7 +1257,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
-                    "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n]"
+                    "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n]"
                 }
             ],
             "stories/tag/Tag.stories.ts": [
@@ -1197,12 +1391,21 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/src/lib/input-number/input-number.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputNumberComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/src/lib/input-text/input-text.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -1365,11 +1568,31 @@
                 "status": "low"
             },
             {
+                "filePath": "stories/input/InputNumber.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InputNumber",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/input/InputNumber.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/input/InputText.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "InputTextStory",
+                "name": "InputText",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

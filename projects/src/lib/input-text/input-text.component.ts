@@ -4,6 +4,7 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
 } from '@angular/forms';
+import { IconPosType, TooltipPositionType } from '../button/types/button.type';
 
 @Component({
   selector: 'ui-kit-input-text',
@@ -17,6 +18,14 @@ export class InputTextComponent implements OnInit {
   });
   @Input() label: any = '';
   @Input() placeholder: any = '';
+  @Input() tooltip: string = '';
+  @Input() tooltipIcon: string = '';
+  @Input() tooltipPosition: TooltipPositionType = 'top';
+  @Input() inputId: string = this.controlName;
+  @Input() icon: string = 'pi-search';
+  @Input() iconPos: IconPosType = 'left';
+  @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
 
   constructor() {}
 

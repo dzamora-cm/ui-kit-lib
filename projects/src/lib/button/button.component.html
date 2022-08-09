@@ -1,12 +1,14 @@
-<p-button
-  [loading]="loading"
-  type="button"
-  label="{{ label }}"
-  class="p-button-{{ type }} {{ size }} {{ type }}-{{ style }}"
-  icon="pi {{ !loading ? icon : '' }}"
-  iconPos="{{ !loading ? iconPos : '' }}"
-  [pTooltip]="tooltip"
-  [tooltipPosition]="tooltipPosition"
-  [badge]="badge"
->
-</p-button>
+<span class="iu-kit-lib-button">
+  <p-button
+    [loading]="loading"
+    type="button"
+    label="{{ label }}"
+    class="p-button-{{ type }} {{ size }} {{ type }}-{{ style }}"
+    icon="pi {{ !loading ? icon : '' }}"
+    iconPos="{{ !loading ? iconPos : '' }}"
+    [pTooltip]="tooltip"
+    [tooltipPosition]="tooltipPosition"
+    [badge]="badge"
+  >
+  </p-button>
+</span>
