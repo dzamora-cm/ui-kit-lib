@@ -24,10 +24,13 @@ export default {
         InputTextModule,
         TooltipModule,
       ],
-      providers: [FormBuilder],
+      providers: [],
     }),
   ],
-  argTypes: {},
+  argTypes: {
+    label: { control: { type: 'text' } },
+    placeholder: { control: { type: 'text' } },
+  },
   excludeStories: /.*Data$/,
   title: 'InputText',
 } as Meta;
@@ -37,7 +40,13 @@ const Template: Story<InputTextComponent> = (args: InputTextComponent) => ({
   props: args,
 });
 
-export const InputTextStory: Story<InputTextComponent> = () => {
+export const InputText = Template.bind({});
+InputText.args = {
+  label: 'Nombre y apellido',
+  placeholder: 'Ejm. Capmotion',
+};
+
+/*export const InputTextStory: Story<InputTextComponent> = () => {
   let formGroup = new FormBuilder().group({
     name: new FormControl(),
   });
@@ -51,4 +60,4 @@ export const InputTextStory: Story<InputTextComponent> = () => {
       label,
     },
   };
-};
+};*/

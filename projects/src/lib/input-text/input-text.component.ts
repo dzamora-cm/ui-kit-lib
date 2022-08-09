@@ -16,6 +16,7 @@ export class InputTextComponent implements OnInit {
     [this.controlName]: new UntypedFormControl(),
   });
   @Input() label: any = '';
+  @Input() placeholder: any = '';
 
   constructor() {}
 

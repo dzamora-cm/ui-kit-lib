@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {
   UntypedFormBuilder,
   UntypedFormControl,
@@ -14,6 +14,7 @@ export interface Option {
   selector: 'ui-kit-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DropdownComponent {
   @Input() controlName: any = 'text';
@@ -22,6 +23,7 @@ export class DropdownComponent {
   });
   @Input() label: string = 'Hello Word';
   @Input() options: Option[] = [];
+  @Input() showClear: boolean = false;
   selectedCode: Option = { name: '', code: '' };
 
   constructor() {}

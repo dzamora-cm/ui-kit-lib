@@ -3,14 +3,13 @@
   *ngIf="formGroup"
   [formGroup]="formGroup"
 >
-  <p>Single</p>
+  <p>{{ label }}</p>
   <p-dropdown
     matInput
     [formControlName]="controlName"
-    [showClear]="true"
+    [showClear]="showClear"
     [options]="options"
     optionValue="code"
     optionLabel="name"
   ></p-dropdown>
 </mat-form-field>
-{{ formGroup.get(controlName)?.value }}

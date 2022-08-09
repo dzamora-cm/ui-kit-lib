@@ -51,7 +51,8 @@
               "node_modules/primeng/resources/themes/lara-light-teal/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css",
-              "./projects/src/style/global.scss"
+              "./projects/src/style/global.scss",
+              "./projects/src/style/colors.scss"
             ],
             "scripts": []
           }

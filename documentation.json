@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "Option",
-            "id": "interface-Option-a126a5dd691a1f10d7826c50bdfd85d86e9cb764e5a903712ecd7483196b58b284f6a597e8eca62cb54bc629926717c9c5c343086190bce1f1e5e589f49293d0",
+            "id": "interface-Option-8464fb07639e5b5280283c154c32909432085b0739057539e63e1079fc5675459e8afb5439e8cdb97b85ccac342c2e3b70643be5c8abab2c97256750d845b706",
             "file": "projects/src/lib/dropdown/dropdown.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  @Input() showClear: boolean = false;\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
             "properties": [
                 {
                     "name": "code",
@@ -42,7 +42,7 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d78e8ed89e1f7a12b58415d88e40d15c5100259abb3850f99f9105b9602311edf8dfa857c10b28cec24b7067debf8f5abdc05cd45d416dfe3d8c6b2787022251",
+            "id": "component-ButtonComponent-d494311eae06bd78c190dc5daa48040392abf3cc338b074bc54eacf7eced22c2453d54aa36383ab7f6493f9336bde92b95b44d1a7579be519fa2d92f5a21d153",
             "file": "projects/src/lib/button/button.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -94,7 +94,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 22,
-                    "type": "iconPosType",
+                    "type": "IconPosType",
                     "decorators": []
                 },
                 {
@@ -139,7 +139,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 20,
-                    "type": "styleType",
+                    "type": "StyleType",
                     "decorators": []
                 },
                 {
@@ -157,7 +157,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 24,
-                    "type": "tooltipPositionType",
+                    "type": "TooltipPositionType",
                     "decorators": []
                 },
                 {
@@ -202,11 +202,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  ButtonType,\n  SizesType,\n  styleType,\n  iconPosType,\n  tooltipPositionType,\n} from './types/button.type';\n\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string = 'Hello Word';\n  @Input() type: ButtonType = 'primary';\n  @Input() size: SizesType = 'large';\n  @Input() style: styleType = 'loud';\n  @Input() icon: string = 'pi-search';\n  @Input() iconPos: iconPosType = 'left';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: tooltipPositionType = 'top';\n  @Input() parameters: any = {};\n  @Input() action: Function = () => {};\n  @Input() loading: boolean = false;\n  @Input() badge: string = '';\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  ButtonType,\n  SizesType,\n  StyleType,\n  IconPosType,\n  TooltipPositionType,\n} from './types/button.type';\n\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string = 'Hello Word';\n  @Input() type: ButtonType = 'primary';\n  @Input() size: SizesType = 'large';\n  @Input() style: StyleType = 'loud';\n  @Input() icon: string = 'pi-search';\n  @Input() iconPos: IconPosType = 'left';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  @Input() parameters: any = {};\n  @Input() action: Function = () => {};\n  @Input() loading: boolean = false;\n  @Input() badge: string = '';\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "button {\n  border: none !important;\n  margin: 8q;\n  border-radius: 5px !important;\n  font-weight: 200 !important;\n  font-size: 12px !important;\n}\n.large {\n  padding: 10q 24q;\n  font-size: 16px !important;\n  margin: 8q;\n}\n.medium {\n  padding: 10q 16q;\n  font-size: 14px !important;\n  margin: 6q;\n}\n.small {\n  padding: 5q 8q;\n  margin: 4q;\n}\n.p-button-primary,\n.p-tag {\n  button {\n    background-color: var(--primary-color) !important;\n  }\n  .pi-spinner {\n    margin-right: 6px;\n  }\n}\n.p-button-secondary,\n.p-tag-secondary {\n  button {\n    background-color: var(--secondary-color) !important;\n  }\n}\n.p-button-success,\n.p-tag-success {\n  button {\n    background-color: var(--success-color) !important;\n  }\n}\n.p-button-info,\n.p-tag-info {\n  button {\n    background-color: var(--info-color) !important;\n  }\n}\n.p-button-warning,\n.p-tag-warning {\n  button {\n    background-color: var(--warning-color) !important;\n  }\n}\n.p-button-help,\n.p-tag-help {\n  button {\n    background-color: var(--help-color) !important;\n  }\n}\n.p-button-danger,\n.p-tag-danger {\n  button {\n    background-color: var(--danger-color) !important;\n  }\n}\n.primary-quiet {\n  background-color: var(--primary-color-50);\n  span {\n    color: var(--primary-color);\n  }\n}\n.primary-transparent {\n  button {\n    background-color: transparent;\n    span {\n      color: var(--primary-color);\n    }\n  }\n}\n.secondary-quiet {\n  button {\n    background-color: var(--secondary-color-50) !important;\n    span {\n      color: var(--secondary-color) !important;\n    }\n  }\n}\n.secondary-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--secondary-color) !important;\n    }\n  }\n}\n.success-quiet {\n  button {\n    background-color: var(--success-color-50) !important;\n    span {\n      color: var(--success-color) !important;\n    }\n  }\n}\n.success-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--success-color) !important;\n    }\n  }\n}\n.warning-quiet {\n  button {\n    background-color: var(--warning-color-50) !important;\n    span {\n      color: var(--warning-color) !important;\n    }\n  }\n}\n.warning-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--warning-color) !important;\n    }\n  }\n}\n.help-quiet {\n  button {\n    background-color: var(--help-color-50) !important;\n    span {\n      color: var(--help-color) !important;\n    }\n  }\n}\n.help-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--help-color) !important;\n    }\n  }\n}\n.danger-quiet {\n  button {\n    background-color: var(--danger-color-50) !important;\n    span {\n      color: var(--danger-color) !important;\n    }\n  }\n}\n.danger-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--danger-color) !important;\n    }\n  }\n}\n.info-quiet {\n  button {\n    background-color: var(--info-color-50) !important;\n    span {\n      color: var(--info-color) !important;\n    }\n  }\n}\n.info-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--info-color) !important;\n    }\n  }\n}\n",
+                    "data": "button {\n  border: none !important;\n  margin: 8q;\n  border-radius: 5px !important;\n  font-weight: 200 !important;\n  font-size: 12px !important;\n}\n.large {\n  button {\n    padding: 10q 24q;\n    font-size: 16px !important;\n    margin: 8q;\n  }\n}\n.medium {\n  button {\n    padding: 10q 16q;\n    font-size: 14px !important;\n    margin: 6q;\n  }\n}\n.small {\n  button {\n    padding: 5q 8q;\n    margin: 4q;\n  }\n}\n.p-button {\n  .pi-spinner {\n    margin-right: 6px;\n  }\n}\n.p-button-primary,\n.p-tag {\n  button {\n    background-color: var(--primary-color) !important;\n  }\n}\n.p-button-secondary,\n.p-tag-secondary {\n  button {\n    background-color: var(--secondary-color) !important;\n  }\n}\n.p-button-success,\n.p-tag-success {\n  button {\n    background-color: var(--success-color) !important;\n  }\n}\n.p-button-info,\n.p-tag-info {\n  button {\n    background-color: var(--info-color) !important;\n  }\n}\n.p-button-warning,\n.p-tag-warning {\n  button {\n    background-color: var(--warning-color) !important;\n  }\n}\n.p-button-help,\n.p-tag-help {\n  button {\n    background-color: var(--help-color) !important;\n  }\n}\n.p-button-danger,\n.p-tag-danger {\n  button {\n    background-color: var(--danger-color) !important;\n  }\n}\n.primary-quiet {\n  background-color: var(--primary-color-50);\n  span {\n    color: var(--primary-color);\n  }\n}\n.primary-transparent {\n  button {\n    background-color: transparent;\n    span {\n      color: var(--primary-color);\n    }\n  }\n}\n.secondary-quiet {\n  button {\n    background-color: var(--secondary-color-50) !important;\n    span {\n      color: var(--secondary-color) !important;\n    }\n  }\n}\n.secondary-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--secondary-color) !important;\n    }\n  }\n}\n.success-quiet {\n  button {\n    background-color: var(--success-color-50) !important;\n    span {\n      color: var(--success-color) !important;\n    }\n  }\n}\n.success-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--success-color) !important;\n    }\n  }\n}\n.warning-quiet {\n  button {\n    background-color: var(--warning-color-50) !important;\n    span {\n      color: var(--warning-color) !important;\n    }\n  }\n}\n.warning-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--warning-color) !important;\n    }\n  }\n}\n.help-quiet {\n  button {\n    background-color: var(--help-color-50) !important;\n    span {\n      color: var(--help-color) !important;\n    }\n  }\n}\n.help-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--help-color) !important;\n    }\n  }\n}\n.danger-quiet {\n  button {\n    background-color: var(--danger-color-50) !important;\n    span {\n      color: var(--danger-color) !important;\n    }\n  }\n}\n.danger-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--danger-color) !important;\n    }\n  }\n}\n.info-quiet {\n  button {\n    background-color: var(--info-color-50) !important;\n    span {\n      color: var(--info-color) !important;\n    }\n  }\n}\n.info-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--info-color) !important;\n    }\n  }\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -226,9 +226,11 @@
         },
         {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-a126a5dd691a1f10d7826c50bdfd85d86e9cb764e5a903712ecd7483196b58b284f6a597e8eca62cb54bc629926717c9c5c343086190bce1f1e5e589f49293d0",
+            "id": "component-DropdownComponent-8464fb07639e5b5280283c154c32909432085b0739057539e63e1079fc5675459e8afb5439e8cdb97b85ccac342c2e3b70643be5c8abab2c97256750d845b706",
             "file": "projects/src/lib/dropdown/dropdown.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -248,7 +250,7 @@
                     "defaultValue": "'text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "any",
                     "decorators": []
                 },
@@ -257,7 +259,7 @@
                     "defaultValue": "new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "UntypedFormGroup",
                     "decorators": []
                 },
@@ -266,7 +268,7 @@
                     "defaultValue": "'Hello Word'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 },
@@ -275,8 +277,17 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "Option[]",
+                    "decorators": []
+                },
+                {
+                    "name": "showClear",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "boolean",
                     "decorators": []
                 }
             ],
@@ -290,7 +301,7 @@
                     "type": "Option",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 27
                 }
             ],
             "methodsClass": [],
@@ -301,11 +312,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  @Input() showClear: boolean = false;\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".ui-kit-dropdown {\n  p {\n    margin: 5px 0px;\n  }\n}\n",
+                    "data": ".ui-kit-dropdown {\n  p {\n    margin: 5px 0px;\n    color: var(--primary-color) !important;\n  }\n}\n.p-dropdown:not(.p-disabled).p-focus,\n.p-dropdown:not(.p-disabled):hover {\n  border-color: var(--primary-color) !important;\n  box-shadow: none;\n}\n",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -316,9 +327,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 25
+                "line": 27
             },
-            "templateData": "<mat-form-field\n  class=\"ui-kit-dropdown\"\n  *ngIf=\"formGroup\"\n  [formGroup]=\"formGroup\"\n>\n  <p>Single</p>\n  <p-dropdown\n    matInput\n    [formControlName]=\"controlName\"\n    [showClear]=\"true\"\n    [options]=\"options\"\n    optionValue=\"code\"\n    optionLabel=\"name\"\n  ></p-dropdown>\n</mat-form-field>\n{{ formGroup.get(controlName)?.value }}\n"
+            "templateData": "<mat-form-field\n  class=\"ui-kit-dropdown\"\n  *ngIf=\"formGroup\"\n  [formGroup]=\"formGroup\"\n>\n  <p>{{ label }}</p>\n  <p-dropdown\n    matInput\n    [formControlName]=\"controlName\"\n    [showClear]=\"showClear\"\n    [options]=\"options\"\n    optionValue=\"code\"\n    optionLabel=\"name\"\n  ></p-dropdown>\n</mat-form-field>\n"
         },
         {
             "name": "InputTextComponent",
@@ -650,14 +661,34 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "DropDownStory",
+                "name": "defaultOptions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/dropDown/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Option[]",
+                "defaultValue": "[\n  { name: null, code: null },\n  { name: 'New York', code: 'NY' },\n  { name: 'Rome', code: 'RM' },\n  { name: 'London', code: 'LDN' },\n  { name: 'Istanbul', code: 'IST' },\n  { name: 'Paris', code: 'PRS' },\n  { name: 'Colombia', code: 'COL' },\n]"
+            },
+            {
+                "name": "DropDown",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/dropDown/DropDown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<DropdownComponent>",
-                "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    city: new FormControl(),\n  });\n  const label = 'Text label';\n  const options: Option[] = [\n    { name: null, code: null },\n    { name: 'New York', code: 'NY' },\n    { name: 'Rome', code: 'RM' },\n    { name: 'London', code: 'LDN' },\n    { name: 'Istanbul', code: 'IST' },\n    { name: 'Paris', code: 'PRS' },\n    { name: 'Colombia', code: 'COL' },\n  ];\n\n  return {\n    component: DropdownComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'city',\n      label,\n      options,\n    },\n  };\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "iconPosType",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['left', 'right']"
             },
             {
                 "name": "InputTextStory",
@@ -709,6 +740,16 @@
                 "defaultValue": "['large', 'medium', 'small']"
             },
             {
+                "name": "styleType",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['loud', 'quiet', 'transparent']"
+            },
+            {
                 "name": "TagSuccess",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -732,6 +773,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/dropDown/DropDown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DropdownComponent>",
+                "defaultValue": "(args: DropdownComponent) => ({\n  component: DropdownComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/input/InputText.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -747,6 +798,16 @@
                 "deprecationMessage": "",
                 "type": "Story<TagComponent>",
                 "defaultValue": "(args: TagComponent) => ({\n  component: TagComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "tooltipPositionType",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['left', 'right', 'top', 'bottom']"
             }
         ],
         "functions": [],
@@ -763,7 +824,7 @@
                 "kind": 186
             },
             {
-                "name": "iconPosType",
+                "name": "IconPosType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"left\" | \"right\"",
@@ -796,7 +857,7 @@
                 "kind": 186
             },
             {
-                "name": "styleType",
+                "name": "StyleType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"loud\" | \"quiet\" | \"transparent\"",
@@ -807,7 +868,7 @@
                 "kind": 186
             },
             {
-                "name": "tooltipPositionType",
+                "name": "TooltipPositionType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
@@ -864,6 +925,16 @@
                     "defaultValue": "[\n  'primary',\n  'secondary',\n  'success',\n  'info',\n  'warning',\n  'help',\n  'danger',\n]"
                 },
                 {
+                    "name": "iconPosType",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['left', 'right']"
+                },
+                {
                     "name": "sizesTypes",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -872,6 +943,26 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "['large', 'medium', 'small']"
+                },
+                {
+                    "name": "styleType",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['loud', 'quiet', 'transparent']"
+                },
+                {
+                    "name": "tooltipPositionType",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/button/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['left', 'right', 'top', 'bottom']"
                 }
             ],
             "projects/src/test.ts": [
@@ -895,16 +986,38 @@
                     "type": "literal type"
                 }
             ],
+            "stories/dropDown/initial-values/index.ts": [
+                {
+                    "name": "defaultOptions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/dropDown/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Option[]",
+                    "defaultValue": "[\n  { name: null, code: null },\n  { name: 'New York', code: 'NY' },\n  { name: 'Rome', code: 'RM' },\n  { name: 'London', code: 'LDN' },\n  { name: 'Istanbul', code: 'IST' },\n  { name: 'Paris', code: 'PRS' },\n  { name: 'Colombia', code: 'COL' },\n]"
+                }
+            ],
             "stories/dropDown/DropDown.stories.ts": [
                 {
-                    "name": "DropDownStory",
+                    "name": "DropDown",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/dropDown/DropDown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/dropDown/DropDown.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<DropdownComponent>",
-                    "defaultValue": "() => {\n  let formGroup = new FormBuilder().group({\n    city: new FormControl(),\n  });\n  const label = 'Text label';\n  const options: Option[] = [\n    { name: null, code: null },\n    { name: 'New York', code: 'NY' },\n    { name: 'Rome', code: 'RM' },\n    { name: 'London', code: 'LDN' },\n    { name: 'Istanbul', code: 'IST' },\n    { name: 'Paris', code: 'PRS' },\n    { name: 'Colombia', code: 'COL' },\n  ];\n\n  return {\n    component: DropdownComponent,\n    props: {\n      formGroup: formGroup,\n      controlName: 'city',\n      label,\n      options,\n    },\n  };\n}"
+                    "defaultValue": "(args: DropdownComponent) => ({\n  component: DropdownComponent,\n  props: args,\n})"
                 }
             ],
             "stories/input/InputText.stories.ts": [
@@ -992,7 +1105,7 @@
                     "kind": 186
                 },
                 {
-                    "name": "iconPosType",
+                    "name": "IconPosType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"left\" | \"right\"",
@@ -1014,7 +1127,7 @@
                     "kind": 186
                 },
                 {
-                    "name": "styleType",
+                    "name": "StyleType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"loud\" | \"quiet\" | \"transparent\"",
@@ -1025,7 +1138,7 @@
                     "kind": 186
                 },
                 {
-                    "name": "tooltipPositionType",
+                    "name": "TooltipPositionType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"left\" | \"right\" | \"top\" | \"bottom\"",
@@ -1071,7 +1184,7 @@
                 "linktype": "component",
                 "name": "DropdownComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -1186,7 +1299,37 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "iconPosType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "sizesTypes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "styleType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/button/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "tooltipPositionType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1196,7 +1339,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "DropDownStory",
+                "name": "DropDown",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/dropDown/DropDown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/dropDown/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "defaultOptions",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

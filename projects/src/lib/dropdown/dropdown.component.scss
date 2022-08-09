@@ -1,5 +1,10 @@
 .ui-kit-dropdown {
-  p {
-    margin: 5px 0px;
+  .p-dropdown-trigger-icon,
+  .p-dropdown-label {
+    color: var(--primary-color);
+  }
+  .p-dropdown-clear-icon,
+  .p-dropdown-clear-icon {
+    color: var(--danger-color);
   }
 }
