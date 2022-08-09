@@ -1,6 +1,6 @@
 # DesignSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Development server
 
@@ -12,7 +12,17 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### INSTALL `https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html`
+
+RUN `aws configure` and add config UserName - Access key - Secret Access key
+RUN `npm run co:login`
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.}
+Run `cd dist`
+Run `npm publish`
+
+#### Changing back to the default npm registry
+
+RUN `npm config set registry https://registry.npmjs.com/`
 
 ## Running unit tests
 

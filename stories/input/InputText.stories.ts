@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { InputTextComponent } from '../projects/src/lib/input-text/input-text.component';
+import { InputTextComponent } from '../../projects/src/lib/input-text/input-text.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   FormBuilder,

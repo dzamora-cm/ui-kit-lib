@@ -1,16 +1,11 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-type ButtonType =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'help'
-  | 'danger';
-type SizesType = 'large' | 'medium' | 'small';
-type styleType = 'loud' | 'quiet' | 'transparent';
-type iconPosType = 'left' | 'right';
-type tooltipPositionType = 'left' | 'right' | 'top' | 'bottom';
+import {
+  ButtonType,
+  SizesType,
+  styleType,
+  iconPosType,
+  tooltipPositionType,
+} from './types/button.type';
 
 @Component({
   selector: 'ui-kit-button',
