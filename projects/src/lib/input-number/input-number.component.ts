@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import {
   UntypedFormBuilder,
   UntypedFormControl,
@@ -13,7 +13,7 @@ import { inputCurrencyMode } from './types/input-number';
   styleUrls: ['./input-number.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class InputNumberComponent implements OnInit {
+export class InputNumberComponent {
   @Input() controlName: any = 'text';
   @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({
     [this.controlName]: new UntypedFormControl(),
@@ -35,6 +35,4 @@ export class InputNumberComponent implements OnInit {
   @Input() readonly: boolean = false;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }
