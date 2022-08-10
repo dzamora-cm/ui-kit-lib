@@ -19,4 +19,8 @@
       [readonly]="readonly"
     />
   </span>
+  <br />
+  <mat-hint *ngIf="invalid">
+    {{ hint }}
+  </mat-hint>
 </mat-form-field>

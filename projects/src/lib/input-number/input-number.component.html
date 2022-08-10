@@ -5,7 +5,7 @@
 >
   <p for="stacked">{{ label }}</p>
   <p-inputNumber
-    pInputText
+    [inputStyleClass]="readonly ? 'readonly' : ''"
     matInput
     [formControlName]="controlName"
     [pTooltip]="tooltip"
@@ -23,4 +23,8 @@
     [readonly]="readonly"
   >
   </p-inputNumber>
+  <br />
+  <mat-hint *ngIf="invalid">
+    {{ hint }}
+  </mat-hint>
 </mat-form-field>

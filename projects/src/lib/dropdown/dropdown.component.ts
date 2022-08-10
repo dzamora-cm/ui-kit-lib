@@ -19,12 +19,14 @@ export interface Option {
 export class DropdownComponent {
   @Input() controlName: any = 'text';
   @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({
-    text: new UntypedFormControl(),
+    [this.controlName]: new UntypedFormControl(),
   });
   @Input() label: string = 'Hello Word';
   @Input() options: Option[] = [];
   @Input() showClear: boolean = false;
   @Input() inputId: string = this.controlName;
+  @Input() hint: string = '';
+  @Input() invalid: boolean | undefined = false;
 
   selectedCode: Option = { name: '', code: '' };
 

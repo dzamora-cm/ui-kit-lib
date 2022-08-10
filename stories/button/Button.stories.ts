@@ -58,9 +58,10 @@ ButtonPrimary.args = {
   icon: 'pi-search',
   tooltip: 'Hello word',
   parameters: {},
-  action: () => {},
+  onClick: () => {},
   loading: false,
   badge: '',
+  isSubmit: true,
 };
 
 export const ButtonSecondary = Template.bind({});
@@ -71,7 +72,8 @@ ButtonSecondary.args = {
   icon: 'pi-search',
   tooltip: 'Hello word',
   parameters: {},
-  action: () => {},
+  onClick: () => {},
   loading: true,
   badge: 'H',
+  isSubmit: false,
 };

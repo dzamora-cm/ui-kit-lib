@@ -37,6 +37,8 @@ DropDown.args = {
   label: 'Hello Word',
   options: defaultOptions,
   showClear: false,
+  hint: 'Debe seleccioanr una opción',
+  invalid: false,
 };
 
 // example with control-name and form-group

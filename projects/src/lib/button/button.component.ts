@@ -16,6 +16,7 @@ import {
 export class ButtonComponent implements OnInit {
   @Input() label: string = 'Hello Word';
   @Input() type: ButtonType = 'primary';
+  @Input() isSubmit: boolean = true;
   @Input() size: SizesType = 'large';
   @Input() style: StyleType = 'loud';
   @Input() icon: string = 'pi-search';
@@ -23,12 +24,13 @@ export class ButtonComponent implements OnInit {
   @Input() tooltip: string = '';
   @Input() tooltipPosition: TooltipPositionType = 'top';
   @Input() parameters: any = {};
-  @Input() action: Function = () => {};
+  @Input() onClick: Function = () => {};
   @Input() loading: boolean = false;
   @Input() badge: string = '';
 
   actionButton = () => {
-    this.action(this.parameters);
+    console.log(13456);
+    this.onClick(this.parameters);
   };
 
   constructor() {}

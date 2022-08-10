@@ -23,9 +23,11 @@ export class InputTextComponent implements OnInit {
   @Input() tooltipPosition: TooltipPositionType = 'top';
   @Input() inputId: string = this.controlName;
   @Input() icon: string = 'pi-search';
+  @Input() hint: string = '';
   @Input() iconPos: IconPosType = 'left';
   @Input() disabled: boolean = false;
   @Input() readonly: boolean = false;
+  @Input() invalid: boolean | undefined = false;
 
   constructor() {}
 

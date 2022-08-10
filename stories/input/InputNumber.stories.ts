@@ -61,4 +61,6 @@ InputNumber.args = {
   suffix: '',
   prefix: '',
   readonly: false,
+  hint: 'Debe ingresar el valor',
+  invalid: false,
 };

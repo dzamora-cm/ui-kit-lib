@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "Option",
-            "id": "interface-Option-8464fb07639e5b5280283c154c32909432085b0739057539e63e1079fc5675459e8afb5439e8cdb97b85ccac342c2e3b70643be5c8abab2c97256750d845b706",
+            "id": "interface-Option-7c29af9412dd484d439dc46f47398cf77fb28e9a5b9a837f582f87d623bcac27911c2657ff79ccd213321b9fa39efbdd51cec050f17a6386baf222638ada4abf",
             "file": "projects/src/lib/dropdown/dropdown.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  @Input() showClear: boolean = false;\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  @Input() showClear: boolean = false;\n  @Input() inputId: string = this.controlName;\n  @Input() hint: string = '';\n  @Input() invalid: boolean | undefined = false;\n\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
             "properties": [
                 {
                     "name": "code",
@@ -42,7 +42,7 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d494311eae06bd78c190dc5daa48040392abf3cc338b074bc54eacf7eced22c2453d54aa36383ab7f6493f9336bde92b95b44d1a7579be519fa2d92f5a21d153",
+            "id": "component-ButtonComponent-668f44757cd46a79fbfde6f30183f0062202e0d4a5216905ca103062d210e648db8de5d234ce47381d51b762b269288ef0a1c2d64e452c6b46a579b8391cc051",
             "file": "projects/src/lib/button/button.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -62,20 +62,11 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "action",
-                    "defaultValue": "() => {}",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 26,
-                    "type": "Function",
-                    "decorators": []
-                },
-                {
                     "name": "badge",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -84,7 +75,7 @@
                     "defaultValue": "'pi-search'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -93,8 +84,17 @@
                     "defaultValue": "'left'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "IconPosType",
+                    "decorators": []
+                },
+                {
+                    "name": "isSubmit",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -111,8 +111,17 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 28,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "onClick",
+                    "defaultValue": "() => {}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "Function",
                     "decorators": []
                 },
                 {
@@ -120,7 +129,7 @@
                     "defaultValue": "{}",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": "any",
                     "decorators": []
                 },
@@ -129,7 +138,7 @@
                     "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "SizesType",
                     "decorators": []
                 },
@@ -138,7 +147,7 @@
                     "defaultValue": "'loud'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "StyleType",
                     "decorators": []
                 },
@@ -147,7 +156,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 },
@@ -156,7 +165,7 @@
                     "defaultValue": "'top'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "TooltipPositionType",
                     "decorators": []
                 },
@@ -180,7 +189,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 31
                 }
             ],
             "methodsClass": [
@@ -190,7 +199,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -202,11 +211,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  ButtonType,\n  SizesType,\n  StyleType,\n  IconPosType,\n  TooltipPositionType,\n} from './types/button.type';\n\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string = 'Hello Word';\n  @Input() type: ButtonType = 'primary';\n  @Input() size: SizesType = 'large';\n  @Input() style: StyleType = 'loud';\n  @Input() icon: string = 'pi-search';\n  @Input() iconPos: IconPosType = 'left';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  @Input() parameters: any = {};\n  @Input() action: Function = () => {};\n  @Input() loading: boolean = false;\n  @Input() badge: string = '';\n\n  actionButton = () => {\n    this.action(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  ButtonType,\n  SizesType,\n  StyleType,\n  IconPosType,\n  TooltipPositionType,\n} from './types/button.type';\n\n@Component({\n  selector: 'ui-kit-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class ButtonComponent implements OnInit {\n  @Input() label: string = 'Hello Word';\n  @Input() type: ButtonType = 'primary';\n  @Input() isSubmit: boolean = true;\n  @Input() size: SizesType = 'large';\n  @Input() style: StyleType = 'loud';\n  @Input() icon: string = 'pi-search';\n  @Input() iconPos: IconPosType = 'left';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  @Input() parameters: any = {};\n  @Input() onClick: Function = () => {};\n  @Input() loading: boolean = false;\n  @Input() badge: string = '';\n\n  actionButton = () => {\n    console.log(13456);\n    this.onClick(this.parameters);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "button {\n  border: none !important;\n  margin: 8q;\n  border-radius: 5px !important;\n  font-weight: 200 !important;\n  font-size: 12px !important;\n}\n.large {\n  button {\n    padding: 10q 24q;\n    font-size: 16px !important;\n    margin: 8q;\n  }\n}\n.medium {\n  button {\n    padding: 10q 16q;\n    font-size: 14px !important;\n    margin: 6q;\n  }\n}\n.small {\n  button {\n    padding: 5q 8q;\n    margin: 4q;\n  }\n}\n.p-button {\n  .pi-spinner {\n    margin-right: 6px;\n  }\n}\n.p-button-primary,\n.p-tag {\n  button {\n    background-color: var(--primary-color) !important;\n  }\n}\n.p-button-secondary,\n.p-tag-secondary {\n  button {\n    background-color: var(--secondary-color) !important;\n  }\n}\n.p-button-success,\n.p-tag-success {\n  button {\n    background-color: var(--success-color) !important;\n  }\n}\n.p-button-info,\n.p-tag-info {\n  button {\n    background-color: var(--info-color) !important;\n  }\n}\n.p-button-warning,\n.p-tag-warning {\n  button {\n    background-color: var(--warning-color) !important;\n  }\n}\n.p-button-help,\n.p-tag-help {\n  button {\n    background-color: var(--help-color) !important;\n  }\n}\n.p-button-danger,\n.p-tag-danger {\n  button {\n    background-color: var(--danger-color) !important;\n  }\n}\n.primary-quiet {\n  background-color: var(--primary-color-50);\n  span {\n    color: var(--primary-color);\n  }\n}\n.primary-transparent {\n  button {\n    background-color: transparent;\n    span {\n      color: var(--primary-color);\n    }\n  }\n}\n.secondary-quiet {\n  button {\n    background-color: var(--secondary-color-50) !important;\n    span {\n      color: var(--secondary-color) !important;\n    }\n  }\n}\n.secondary-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--secondary-color) !important;\n    }\n  }\n}\n.success-quiet {\n  button {\n    background-color: var(--success-color-50) !important;\n    span {\n      color: var(--success-color) !important;\n    }\n  }\n}\n.success-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--success-color) !important;\n    }\n  }\n}\n.warning-quiet {\n  button {\n    background-color: var(--warning-color-50) !important;\n    span {\n      color: var(--warning-color) !important;\n    }\n  }\n}\n.warning-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--warning-color) !important;\n    }\n  }\n}\n.help-quiet {\n  button {\n    background-color: var(--help-color-50) !important;\n    span {\n      color: var(--help-color) !important;\n    }\n  }\n}\n.help-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--help-color) !important;\n    }\n  }\n}\n.danger-quiet {\n  button {\n    background-color: var(--danger-color-50) !important;\n    span {\n      color: var(--danger-color) !important;\n    }\n  }\n}\n.danger-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--danger-color) !important;\n    }\n  }\n}\n.info-quiet {\n  button {\n    background-color: var(--info-color-50) !important;\n    span {\n      color: var(--info-color) !important;\n    }\n  }\n}\n.info-transparent {\n  button {\n    background-color: transparent !important;\n    span {\n      color: var(--info-color) !important;\n    }\n  }\n}\n",
+                    "data": "@import \"../../style/global.scss\";\n\n.iu-kit-lib-button {\n  button {\n    border: none !important;\n    margin: 8q;\n    border-radius: 5px !important;\n    font-weight: 200 !important;\n    font-size: 12px !important;\n  }\n  .large {\n    button {\n      padding: 10q 24q;\n      font-size: 16px !important;\n      margin: 8q;\n    }\n  }\n  .medium {\n    button {\n      padding: 10q 16q;\n      font-size: 14px !important;\n      margin: 6q;\n    }\n  }\n  .small {\n    button {\n      padding: 5q 8q;\n      margin: 4q;\n    }\n  }\n  .p-button {\n    .pi-spinner {\n      margin-right: 6px;\n    }\n  }\n  .p-button-primary,\n  .p-tag {\n    button {\n      background-color: var(--primary-color) !important;\n    }\n  }\n  .p-button-secondary,\n  .p-tag-secondary {\n    button {\n      background-color: var(--secondary-color) !important;\n    }\n  }\n  .p-button-success,\n  .p-tag-success {\n    button {\n      background-color: var(--success-color) !important;\n    }\n  }\n  .p-button-info,\n  .p-tag-info {\n    button {\n      background-color: var(--info-color) !important;\n    }\n  }\n  .p-button-warning,\n  .p-tag-warning {\n    button {\n      background-color: var(--warning-color) !important;\n    }\n  }\n  .p-button-help,\n  .p-tag-help {\n    button {\n      background-color: var(--help-color) !important;\n    }\n  }\n  .p-button-danger,\n  .p-tag-danger {\n    button {\n      background-color: var(--danger-color) !important;\n    }\n  }\n  .primary-quiet {\n    background-color: var(--primary-color-50);\n    span {\n      color: var(--primary-color);\n    }\n  }\n  .primary-transparent {\n    button {\n      background-color: transparent;\n      span {\n        color: var(--primary-color);\n      }\n    }\n  }\n  .secondary-quiet {\n    button {\n      background-color: var(--secondary-color-50) !important;\n      span {\n        color: var(--secondary-color) !important;\n      }\n    }\n  }\n  .secondary-transparent {\n    button {\n      background-color: transparent !important;\n      span {\n        color: var(--secondary-color) !important;\n      }\n    }\n  }\n  .success-quiet {\n    button {\n      background-color: var(--success-color-50) !important;\n      span {\n        color: var(--success-color) !important;\n      }\n    }\n  }\n  .success-transparent {\n    button {\n      background-color: transparent !important;\n      span {\n        color: var(--success-color) !important;\n      }\n    }\n  }\n  .warning-quiet {\n    button {\n      background-color: var(--warning-color-50) !important;\n      span {\n        color: var(--warning-color) !important;\n      }\n    }\n  }\n  .warning-transparent {\n    button {\n      background-color: transparent !important;\n      span {\n        color: var(--warning-color) !important;\n      }\n    }\n  }\n  .help-quiet {\n    button {\n      background-color: var(--help-color-50) !important;\n      span {\n        color: var(--help-color) !important;\n      }\n    }\n  }\n  .help-transparent {\n    button {\n      background-color: transparent !important;\n      span {\n        color: var(--help-color) !important;\n      }\n    }\n  }\n  .danger-quiet {\n    button {\n      background-color: var(--danger-color-50) !important;\n      span {\n        color: var(--danger-color) !important;\n      }\n    }\n  }\n  .danger-transparent {\n    button {\n      background-color: transparent !important;\n      span {\n        color: var(--danger-color) !important;\n      }\n    }\n  }\n  .info-quiet {\n    button {\n      background-color: var(--info-color-50) !important;\n      span {\n        color: var(--info-color) !important;\n      }\n    }\n  }\n  .info-transparent {\n    button {\n      background-color: transparent !important;\n      span {\n        color: var(--info-color) !important;\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -217,16 +226,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 32
+                "line": 34
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p-button\n  [loading]=\"loading\"\n  type=\"button\"\n  label=\"{{ label }}\"\n  class=\"p-button-{{ type }} {{ size }} {{ type }}-{{ style }}\"\n  icon=\"pi {{ !loading ? icon : '' }}\"\n  iconPos=\"{{ !loading ? iconPos : '' }}\"\n  [pTooltip]=\"tooltip\"\n  [tooltipPosition]=\"tooltipPosition\"\n  [badge]=\"badge\"\n>\n</p-button>\n"
+            "templateData": "<span class=\"iu-kit-lib-button\">\n  <p-button\n    [loading]=\"loading\"\n    [type]=\"isSubmit ? 'submit' : 'button'\"\n    label=\"{{ label }}\"\n    class=\"p-button-{{ type }} {{ size }} {{ type }}-{{ style }}\"\n    icon=\"pi {{ !loading ? icon : '' }}\"\n    iconPos=\"{{ !loading ? iconPos : '' }}\"\n    [pTooltip]=\"tooltip\"\n    [tooltipPosition]=\"tooltipPosition\"\n    [badge]=\"badge\"\n    (click)=\"actionButton()\"\n  >\n  </p-button>\n</span>\n"
         },
         {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-8464fb07639e5b5280283c154c32909432085b0739057539e63e1079fc5675459e8afb5439e8cdb97b85ccac342c2e3b70643be5c8abab2c97256750d845b706",
+            "id": "component-DropdownComponent-7c29af9412dd484d439dc46f47398cf77fb28e9a5b9a837f582f87d623bcac27911c2657ff79ccd213321b9fa39efbdd51cec050f17a6386baf222638ada4abf",
             "file": "projects/src/lib/dropdown/dropdown.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -256,11 +265,38 @@
                 },
                 {
                     "name": "formGroup",
-                    "defaultValue": "new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  })",
+                    "defaultValue": "new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 21,
                     "type": "UntypedFormGroup",
+                    "decorators": []
+                },
+                {
+                    "name": "hint",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "inputId",
+                    "defaultValue": "this.controlName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "invalid",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean | undefined",
                     "decorators": []
                 },
                 {
@@ -301,7 +337,7 @@
                     "type": "Option",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 31
                 }
             ],
             "methodsClass": [],
@@ -312,11 +348,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    text: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  @Input() showClear: boolean = false;\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\n\nexport interface Option {\n  name: string | null;\n  code: string | null;\n}\n\n@Component({\n  selector: 'ui-kit-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DropdownComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: string = 'Hello Word';\n  @Input() options: Option[] = [];\n  @Input() showClear: boolean = false;\n  @Input() inputId: string = this.controlName;\n  @Input() hint: string = '';\n  @Input() invalid: boolean | undefined = false;\n\n  selectedCode: Option = { name: '', code: '' };\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".ui-kit-dropdown {\n  .p-dropdown-trigger-icon,\n  .p-dropdown-label {\n    color: var(--primary-color);\n  }\n  .p-dropdown-clear-icon,\n  .p-dropdown-clear-icon {\n    color: var(--danger-color);\n  }\n}\n",
+                    "data": "@import \"../../style/global.scss\";\n\n.ui-kit-dropdown {\n  .p-dropdown-trigger-icon,\n  .p-dropdown-label {\n    color: var(--primary-color);\n  }\n}\n",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -327,15 +363,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 27
+                "line": 31
             },
-            "templateData": "<mat-form-field\n  class=\"ui-kit-dropdown\"\n  *ngIf=\"formGroup\"\n  [formGroup]=\"formGroup\"\n>\n  <p>{{ label }}</p>\n  <p-dropdown\n    matInput\n    [formControlName]=\"controlName\"\n    [showClear]=\"showClear\"\n    [options]=\"options\"\n    optionValue=\"code\"\n    optionLabel=\"name\"\n  ></p-dropdown>\n</mat-form-field>\n"
+            "templateData": "<mat-form-field\n  class=\"ui-kit-dropdown\"\n  *ngIf=\"formGroup\"\n  [formGroup]=\"formGroup\"\n>\n  <p>{{ label }}</p>\n  <p-dropdown\n    matInput\n    [formControlName]=\"controlName\"\n    [showClear]=\"showClear\"\n    [options]=\"options\"\n    optionValue=\"code\"\n    optionLabel=\"name\"\n    [inputId]=\"inputId\"\n  ></p-dropdown>\n  <br />\n  <mat-hint *ngIf=\"invalid\">\n    {{ hint }}\n  </mat-hint>\n</mat-form-field>\n"
         },
         {
             "name": "InputNumberComponent",
-            "id": "component-InputNumberComponent-66b13f84349ab8e5209c140fcb46e1792d2cc894802576f18a4521be2ca77773f9b099388ae6e304772519fb675b36d21caee0dcda0d37409e994d8c50df5ea0",
+            "id": "component-InputNumberComponent-5e79b744893ae3959ef9deadf910ba5ba66a6a81692e1b3f012b537aca462a1d58e536f97d6003a2c4c5ca03c35caa6c138a857ebb96bff0414e6c57b87ad5aa",
             "file": "projects/src/lib/input-number/input-number.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -355,8 +393,17 @@
                     "defaultValue": "'text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "currency",
+                    "defaultValue": "'USD'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -364,8 +411,35 @@
                     "defaultValue": "new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "UntypedFormGroup",
+                    "decorators": []
+                },
+                {
+                    "name": "hint",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "inputId",
+                    "defaultValue": "this.controlName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "invalid",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "boolean | undefined",
                     "decorators": []
                 },
                 {
@@ -373,8 +447,98 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "locale",
+                    "defaultValue": "'en-US'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "max",
+                    "defaultValue": "999999999999",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "inputCurrencyMode",
+                    "decorators": []
+                },
+                {
+                    "name": "prefix",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showButtons",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showClear",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "suffix",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -382,7 +546,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -391,36 +555,14 @@
                     "defaultValue": "'top'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "TooltipPositionType",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "value17",
-                    "defaultValue": "20",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 15
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 25,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -428,11 +570,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\nimport { TooltipPositionType } from '../button/types/button.type';\n\n@Component({\n  selector: 'ui-kit-input-number',\n  templateUrl: './input-number.component.html',\n  styleUrls: ['./input-number.component.scss'],\n})\nexport class InputNumberComponent implements OnInit {\n  value17: number = 20;\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\nimport { TooltipPositionType } from '../button/types/button.type';\nimport { inputCurrencyMode } from './types/input-number';\n\n@Component({\n  selector: 'ui-kit-input-number',\n  templateUrl: './input-number.component.html',\n  styleUrls: ['./input-number.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class InputNumberComponent {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  @Input() showButtons: boolean = false;\n  @Input() inputId: string = this.controlName;\n  @Input() mode: inputCurrencyMode = '';\n  @Input() currency: string = 'USD';\n  @Input() min: number = 0;\n  @Input() max: number = 999999999999;\n  @Input() step: number = 1;\n  @Input() showClear: boolean = true;\n  @Input() locale: string = 'en-US';\n  @Input() suffix: string = '';\n  @Input() prefix: string = '';\n  @Input() hint: string = '';\n  @Input() readonly: boolean = false;\n  @Input() invalid: boolean | undefined = false;\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "@import \"../../style/global.scss\";\n\n.ui-ki-lib-input-number {\n  .p-inputnumber-button-group {\n    button.p-button {\n      background-color: var(--primary-color) !important;\n      border: none;\n    }\n  }\n}\n",
                     "styleUrl": "./input-number.component.scss"
                 }
             ],
@@ -443,16 +585,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 22
+                "line": 37
             },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\">\n  <p>{{ label }}</p>\n  <p-inputNumber\n    pInputText\n    matInput\n    [formControlName]=\"controlName\"\n    [pTooltip]=\"tooltip\"\n    inputId=\"stacked\"\n    mode=\"currency\"\n    currency=\"USD\"\n  >\n  </p-inputNumber>\n</mat-form-field>\n"
+            "templateData": "<mat-form-field\n  *ngIf=\"formGroup\"\n  [formGroup]=\"formGroup\"\n  class=\"ui-ki-lib-input-number\"\n>\n  <p for=\"stacked\">{{ label }}</p>\n  <p-inputNumber\n    [inputStyleClass]=\"readonly ? 'readonly' : ''\"\n    matInput\n    [formControlName]=\"controlName\"\n    [pTooltip]=\"tooltip\"\n    [mode]=\"mode\"\n    [currency]=\"currency\"\n    [showButtons]=\"showButtons\"\n    [inputId]=\"inputId\"\n    [min]=\"min\"\n    [max]=\"max\"\n    [showClear]=\"showClear\"\n    [step]=\"step\"\n    [locale]=\"locale\"\n    [suffix]=\"suffix\"\n    [prefix]=\"prefix\"\n    [readonly]=\"readonly\"\n  >\n  </p-inputNumber>\n  <br />\n  <mat-hint *ngIf=\"invalid\">\n    {{ hint }}\n  </mat-hint>\n</mat-form-field>\n"
         },
         {
             "name": "InputTextComponent",
-            "id": "component-InputTextComponent-e45a77770add4f1515f3219e5634c4aec1363e80f43a316ca717612622bba1fa165d1854d8b57e99c2a79d250fcf669cc61e22e48edd3c9bbf7cf153327b0a5a",
+            "id": "component-InputTextComponent-7919c89bb7bc9026dfe0cd73e3aec9280e89d37ca058a7026d8bfb7d5276945aa4475c456d02402c3d3c692b3c49400b3b980f98062aaaae8b7f7f6a3684a1cc",
             "file": "projects/src/lib/input-text/input-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -479,12 +618,66 @@
                     "decorators": []
                 },
                 {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "formGroup",
                     "defaultValue": "new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 16,
                     "type": "UntypedFormGroup",
+                    "decorators": []
+                },
+                {
+                    "name": "hint",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "'pi-search'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPos",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "IconPosType",
+                    "decorators": []
+                },
+                {
+                    "name": "inputId",
+                    "defaultValue": "this.controlName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "invalid",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean | undefined",
                     "decorators": []
                 },
                 {
@@ -506,6 +699,15 @@
                     "decorators": []
                 },
                 {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "tooltip",
                     "defaultValue": "''",
                     "deprecated": false,
@@ -515,11 +717,20 @@
                     "decorators": []
                 },
                 {
+                    "name": "tooltipIcon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "tooltipPosition",
                     "defaultValue": "'top'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "TooltipPositionType",
                     "decorators": []
                 }
@@ -533,7 +744,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -545,11 +756,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\nimport { TooltipPositionType } from '../button/types/button.type';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n  @Input() placeholder: any = '';\n  @Input() tooltip: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n\n  constructor() {}\n\n  ngOnInit(): void {\n    console.log(this.formGroup);\n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport {\n  UntypedFormBuilder,\n  UntypedFormControl,\n  UntypedFormGroup,\n} from '@angular/forms';\nimport { IconPosType, TooltipPositionType } from '../button/types/button.type';\n\n@Component({\n  selector: 'ui-kit-input-text',\n  templateUrl: './input-text.component.html',\n  styleUrls: ['./input-text.component.scss'],\n})\nexport class InputTextComponent implements OnInit {\n  @Input() controlName: any = 'text';\n  @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({\n    [this.controlName]: new UntypedFormControl(),\n  });\n  @Input() label: any = '';\n  @Input() placeholder: any = '';\n  @Input() tooltip: string = '';\n  @Input() tooltipIcon: string = '';\n  @Input() tooltipPosition: TooltipPositionType = 'top';\n  @Input() inputId: string = this.controlName;\n  @Input() icon: string = 'pi-search';\n  @Input() hint: string = '';\n  @Input() iconPos: IconPosType = 'left';\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() invalid: boolean | undefined = false;\n\n  constructor() {}\n\n  ngOnInit(): void {\n    console.log(this.formGroup);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "@import \"../../style/global.scss\";\n",
                     "styleUrl": "./input-text.component.scss"
                 }
             ],
@@ -560,18 +771,20 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 22
+                "line": 30
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\">\n  <p>{{ label }}</p>\n  <input\n    pInputText\n    matInput\n    [formControlName]=\"controlName\"\n    [pTooltip]=\"tooltip\"\n    [placeholder]=\"placeholder\"\n  />\n</mat-form-field>\n"
+            "templateData": "<mat-form-field *ngIf=\"formGroup\" [formGroup]=\"formGroup\">\n  <p>{{ label }}</p>\n  <span class=\"p-input-icon-{{ iconPos }}\">\n    <i\n      class=\"pi {{ icon }}\"\n      [pTooltip]=\"tooltipIcon\"\n      [tooltipPosition]=\"'top'\"\n    ></i>\n    <input\n      class=\"{{ disabled ? 'disabled' : '' }} {{ readonly ? 'readonly' : '' }} \"\n      pInputText\n      matInput\n      [formControlName]=\"controlName\"\n      [pTooltip]=\"tooltip\"\n      [placeholder]=\"placeholder\"\n      [id]=\"inputId\"\n      [tooltipPosition]=\"tooltipPosition\"\n      [disabled]=\"disabled\"\n      [readonly]=\"readonly\"\n    />\n  </span>\n  <br />\n  <mat-hint *ngIf=\"invalid\">\n    {{ hint }}\n  </mat-hint>\n</mat-form-field>\n"
         },
         {
             "name": "TagComponent",
-            "id": "component-TagComponent-b0983a4a5c7b1bee7b62e4bc8b06566ee6f734c3ae4ad930565be8c27372cd195bb1e7570a09e59568fceda71ca44d14395f34b1820a020f9526f3d016bea8f4",
+            "id": "component-TagComponent-1596000b0f70400e810c4d30ad89afcef00474e48a5f26a7b09165ac6eb2f2ce2024605b4497f94329d4fc6a33df55ebec889eb77e519fe89182bd9fd1bd640b",
             "file": "projects/src/lib/tag/tag.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -591,7 +804,7 @@
                     "defaultValue": "'View tag'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -600,7 +813,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "Severity",
                     "decorators": []
                 }
@@ -614,7 +827,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 16,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -626,11 +839,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\ntype Severity = 'success' | 'info' | 'warning' | 'danger' | 'primary';\n\n@Component({\n  selector: 'ui-kit-tag',\n  templateUrl: './tag.component.html',\n  styleUrls: ['./tag.component.scss'],\n})\nexport class TagComponent implements OnInit {\n  @Input() label: string = 'View tag';\n  @Input() severity: Severity = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\nimport { Severity } from './types/tag.component.types';\n\n@Component({\n  selector: 'ui-kit-tag',\n  templateUrl: './tag.component.html',\n  styleUrls: ['./tag.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TagComponent implements OnInit {\n  @Input() label: string = 'View tag';\n  @Input() severity: Severity = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "//@import \"../../style/global.scss\";\n\n.tag {\n  padding: 6px 10px;\n  border-radius: 4px;\n  box-shadow: none;\n}\n",
+                    "data": "@import \"../../style/global.scss\";\n\n.tag {\n  padding: 6px 10px;\n  border-radius: 40px;\n  box-shadow: none;\n}\n.p-tag {\n  background: var(--primary-color) !important;\n}\n.p-tag-success {\n  background: var(--success-color) !important;\n}\n.p-tag-info {\n  background: var(--info-color) !important;\n}\n.p-tag-warning {\n  background: var(--warning-color) !important;\n}\n.p-tag-danger {\n  background: var(--danger-color) !important;\n}\n",
                     "styleUrl": "./tag.component.scss"
                 }
             ],
@@ -641,7 +854,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 11
+                "line": 12
             },
             "implements": [
                 "OnInit"
@@ -652,13 +865,13 @@
     "modules": [
         {
             "name": "primeNgModule",
-            "id": "module-primeNgModule-21466f1e44952581a7ff7435d5dfd8e81596f47176d7416a5b134b2962f9eae04ba2321b16f0a118f96c6ed0f6da883acabb82d0da63606a5b82f37daa92bdbf",
+            "id": "module-primeNgModule-b3eb76a471f5479901362421fbd5be7d6a6894716297846f31c6c59d2bb7974cc2bfdf821ae2cb94d62520b8b33afd928a4de19a63755391b5e8fa587b3cd55f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/src/lib/prime-ng.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { TooltipModule } from 'primeng/tooltip';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { InputNumberModule } from 'primeng/inputnumber';\n\nconst primeNgModules: any[] = [\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n];\n\n@NgModule({\n  imports: [...primeNgModules],\n  exports: [...primeNgModules],\n})\nexport class primeNgModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { TooltipModule } from 'primeng/tooltip';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { InputNumberModule } from 'primeng/inputnumber';\nimport { TagModule } from 'primeng/tag';\n\nconst primeNgModules: any[] = [\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n  TagModule,\n];\n\n@NgModule({\n  imports: [...primeNgModules],\n  exports: [...primeNgModules],\n})\nexport class primeNgModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -880,7 +1093,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any[]",
-                "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n]"
+                "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n  TagModule,\n]"
             },
             {
                 "name": "require",
@@ -890,6 +1103,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "severities",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/tag/initial-values/index.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['success', 'info', 'warning', 'danger', 'primary']"
             },
             {
                 "name": "sizesTypes",
@@ -920,6 +1143,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -962,16 +1195,6 @@
                 "defaultValue": "(args: TagComponent) => ({\n  component: TagComponent,\n  props: args,\n})"
             },
             {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/button/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
-            },
-            {
                 "name": "tooltipPositionType",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1007,11 +1230,22 @@
                 "kind": 186
             },
             {
+                "name": "inputCurrencyMode",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"decimal\" | \"currency\" | string",
+                "file": "projects/src/lib/input-number/types/input-number.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
                 "name": "Severity",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"info\" | \"warning\" | \"danger\" | \"primary\"",
-                "file": "projects/src/lib/tag/tag.component.ts",
+                "file": "projects/src/lib/tag/types/tag.component.types.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1257,7 +1491,19 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
-                    "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n]"
+                    "defaultValue": "[\n  ButtonModule,\n  TooltipModule,\n  InputTextModule,\n  DropdownModule,\n  InputNumberModule,\n  TagModule,\n]"
+                }
+            ],
+            "stories/tag/initial-values/index.ts": [
+                {
+                    "name": "severities",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/tag/initial-values/index.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['success', 'info', 'warning', 'danger', 'primary']"
                 }
             ],
             "stories/tag/Tag.stories.ts": [
@@ -1343,13 +1589,26 @@
                     "kind": 186
                 }
             ],
-            "projects/src/lib/tag/tag.component.ts": [
+            "projects/src/lib/input-number/types/input-number.ts": [
+                {
+                    "name": "inputCurrencyMode",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"decimal\" | \"currency\" | string",
+                    "file": "projects/src/lib/input-number/types/input-number.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "projects/src/lib/tag/types/tag.component.types.ts": [
                 {
                     "name": "Severity",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"success\" | \"info\" | \"warning\" | \"danger\" | \"primary\"",
-                    "file": "projects/src/lib/tag/tag.component.ts",
+                    "file": "projects/src/lib/tag/types/tag.component.types.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1369,7 +1628,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -1378,7 +1637,7 @@
                 "linktype": "component",
                 "name": "DropdownComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -1396,7 +1655,7 @@
                 "linktype": "component",
                 "name": "InputNumberComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {
@@ -1405,7 +1664,7 @@
                 "linktype": "component",
                 "name": "InputTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -1623,6 +1882,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/tag/initial-values/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "severities",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 .p-dropdown:not(.p-disabled).p-focus,
 .p-dropdown:not(.p-disabled):hover,
 .p-inputtext:enabled:focus,
@@ -20,6 +22,12 @@ mat-form-field {
   input.disabled,
   input.readonly {
     border: 1px dashed var(--neutro-color-50) !important;
+  }
+  mat-hint {
+    color: var(--neutro-color-50) !important;
+    margin-left: 5px !important;
+    margin-top: 16px !important;
+    font-size: 13px;
   }
 }
 

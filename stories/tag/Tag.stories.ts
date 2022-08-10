@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { TagComponent } from '../../projects/src/lib/tag/tag.component';
 import { TagModule } from 'primeng/tag';
+import { severities } from './initial-values';
 
 export default {
   component: TagComponent,
@@ -11,6 +12,12 @@ export default {
       imports: [CommonModule, TagModule],
     }),
   ],
+  argTypes: {
+    severity: {
+      options: severities,
+      control: { type: 'select' },
+    },
+  },
   excludeStories: /.*Data$/,
   title: 'MISC',
 } as Meta;

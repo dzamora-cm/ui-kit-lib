@@ -13,4 +13,8 @@
     optionLabel="name"
     [inputId]="inputId"
   ></p-dropdown>
+  <br />
+  <mat-hint *ngIf="invalid">
+    {{ hint }}
+  </mat-hint>
 </mat-form-field>

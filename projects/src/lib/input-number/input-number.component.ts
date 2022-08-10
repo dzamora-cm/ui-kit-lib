@@ -18,7 +18,7 @@ export class InputNumberComponent {
   @Input() formGroup: UntypedFormGroup = new UntypedFormBuilder().group({
     [this.controlName]: new UntypedFormControl(),
   });
-  @Input() label: any = 'Hola Mundo';
+  @Input() label: any = '';
   @Input() tooltip: string = '';
   @Input() tooltipPosition: TooltipPositionType = 'top';
   @Input() showButtons: boolean = false;
@@ -32,7 +32,9 @@ export class InputNumberComponent {
   @Input() locale: string = 'en-US';
   @Input() suffix: string = '';
   @Input() prefix: string = '';
+  @Input() hint: string = '';
   @Input() readonly: boolean = false;
+  @Input() invalid: boolean | undefined = false;
 
   constructor() {}
 }

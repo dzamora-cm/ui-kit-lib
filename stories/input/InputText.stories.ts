@@ -48,6 +48,8 @@ InputText.args = {
   placeholder: 'Ejm. Capmotion',
   disabled: false,
   readonly: false,
+  hint: 'Default hint',
+  invalid: false,
 };
 
 /*export const InputTextStory: Story<InputTextComponent> = () => {
