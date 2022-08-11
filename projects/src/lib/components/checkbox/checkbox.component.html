@@ -1,0 +1,24 @@
+<mat-form-field
+  *ngIf="formGroup"
+  [formGroup]="formGroup"
+  class="iu-kit-lib-checkbox"
+>
+  <label
+    *ngIf="labelPos === 'left'"
+    class="label-checkbox"
+    [for]="controlName"
+    >{{ label }}</label
+  >
+  <p-checkbox
+    class="checkbox-{{ severity }}"
+    [binary]="true"
+    [formControlName]="controlName"
+    [id]="controlName"
+  ></p-checkbox>
+  <label
+    *ngIf="labelPos === 'right'"
+    class="label-checkbox"
+    [for]="controlName"
+    >{{ label }}</label
+  >
+</mat-form-field>

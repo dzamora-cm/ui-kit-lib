@@ -4,8 +4,8 @@ import {
   UntypedFormControl,
   UntypedFormGroup,
 } from '@angular/forms';
-import { TooltipPositionType } from '../button/types/button.type';
-import { inputCurrencyMode } from './types/input-number';
+import { Position } from '../../shared/types';
+import { inputCurrencyMode } from './types/input-number.type';
 
 @Component({
   selector: 'ui-kit-input-number',
@@ -20,7 +20,7 @@ export class InputNumberComponent {
   });
   @Input() label: any = '';
   @Input() tooltip: string = '';
-  @Input() tooltipPosition: TooltipPositionType = 'top';
+  @Input() tooltipPosition: Position = 'top';
   @Input() showButtons: boolean = false;
   @Input() inputId: string = this.controlName;
   @Input() mode: inputCurrencyMode = '';

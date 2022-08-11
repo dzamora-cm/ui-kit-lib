@@ -1,0 +1,50 @@
+@import "../../../style/global.scss";
+
+@mixin changeColorcheckbox($color, $colorHover) {
+  .p-checkbox .p-checkbox-box.p-highlight {
+    background-color: var($color);
+    border-color: var($color);
+  }
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    background-color: var($colorHover);
+    border-color: var($colorHover);
+  }
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+    box-shadow: none;
+    border-color: var($color);
+  }
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+    border-color: var($color);
+  }
+}
+
+.iu-kit-lib-checkbox {
+  .label-checkbox {
+    margin-left: 7px;
+    margin-right: 7px;
+    color: var(--neutro-color);
+    font-size: 16px;
+  }
+  .checkbox-primary {
+    @include changeColorcheckbox(--primary-color, --primary-color);
+  }
+
+  .checkbox-secondary {
+    @include changeColorcheckbox(--secondary-color, --secondary-color);
+  }
+  .checkbox-success {
+    @include changeColorcheckbox(--success-color, --success-color);
+  }
+  .checkbox-info {
+    @include changeColorcheckbox(--info-color, --info-color);
+  }
+  .checkbox-warning {
+    @include changeColorcheckbox(--warning-color, --warning-color);
+  }
+  .checkbox-help {
+    @include changeColorcheckbox(--help-color, --help-color);
+  }
+  .checkbox-danger {
+    @include changeColorcheckbox(--danger-color, --danger-color);
+  }
+}

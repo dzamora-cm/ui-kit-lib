@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimeNGConfig } from 'primeng/api';
 import { primeNgModule } from './prime-ng.module';
 import { myModules } from './my-modules.module';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 @NgModule({
-  declarations: [myModules],
+  declarations: [myModules, CheckboxComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

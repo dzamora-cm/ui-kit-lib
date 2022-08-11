@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {
-  ButtonType,
-  SizesType,
-  StyleType,
-  IconPosType,
-  TooltipPositionType,
-} from './types/button.type';
+  PositionSimple,
+  Position,
+  Severity,
+  Sizes,
+  Range,
+} from '../../shared/types';
 
 @Component({
   selector: 'ui-kit-button',
@@ -15,14 +15,14 @@ import {
 })
 export class ButtonComponent implements OnInit {
   @Input() label: string = 'Hello Word';
-  @Input() type: ButtonType = 'primary';
+  @Input() severity: Severity = 'primary';
   @Input() isSubmit: boolean = true;
-  @Input() size: SizesType = 'large';
-  @Input() style: StyleType = 'loud';
+  @Input() size: Sizes = 'large';
+  @Input() style: Range = 'loud';
   @Input() icon: string = 'pi-search';
-  @Input() iconPos: IconPosType = 'left';
+  @Input() iconPos: PositionSimple = 'left';
   @Input() tooltip: string = '';
-  @Input() tooltipPosition: TooltipPositionType = 'top';
+  @Input() tooltipPosition: Position = 'top';
   @Input() parameters: any = {};
   @Input() onClick: Function = () => {};
   @Input() loading: boolean = false;

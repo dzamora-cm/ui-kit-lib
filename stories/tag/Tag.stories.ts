@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { TagComponent } from '../../projects/src/lib/tag/tag.component';
+import { TagComponent } from '../../projects/src/lib/components/tag/tag.component';
 import { TagModule } from 'primeng/tag';
 import { severities } from './initial-values';
 

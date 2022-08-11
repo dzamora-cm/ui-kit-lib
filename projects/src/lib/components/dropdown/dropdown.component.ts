@@ -28,7 +28,7 @@ export class DropdownComponent {
   @Input() hint: string = '';
   @Input() invalid: boolean | undefined = false;
 
-  selectedCode: Option = { name: '', code: '' };
+  selectedCode: Option = { name: null, code: null };
 
   constructor() {}
 }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { DropdownModule } from 'primeng/dropdown';
-import { DropdownComponent } from 'projects/src/lib/dropdown/dropdown.component';
+import { DropdownComponent } from 'projects/src/lib/components/dropdown/dropdown.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { defaultOptions } from './initial-values';

@@ -1,0 +1,10 @@
+@import "../../../style/global.scss";
+
+.ui-kit-dropdown {
+  .p-dropdown-label {
+    color: var(--neutro-color);
+  }
+  .p-dropdown-trigger-icon {
+    color: var(--primary-color);
+  }
+}

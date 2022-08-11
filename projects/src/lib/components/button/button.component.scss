@@ -1,4 +1,4 @@
-@import "../../style/global.scss";
+@import "../../../style/global.scss";
 
 .iu-kit-lib-button {
   button {
@@ -76,9 +76,11 @@
     }
   }
   .primary-quiet {
-    background-color: var(--primary-color-50);
+    button {
+      background-color: var(--primary-color-50);
+    }
     span {
-      color: var(--primary-color);
+      color: var(--primary-color-50);
     }
   }
   .primary-transparent {

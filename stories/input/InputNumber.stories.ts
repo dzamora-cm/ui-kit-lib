@@ -3,9 +3,9 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from 'primeng/tooltip';
-import { InputNumberComponent } from 'projects/src/lib/input-number/input-number.component';
+import { InputNumberComponent } from 'projects/src/lib/components/input-number/input-number.component';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { tooltipPositionType } from 'stories/button/initial-values';
+import { positions } from 'projects/src/lib/shared/const';
 
 export default {
   component: InputNumberComponent,
@@ -30,7 +30,7 @@ export default {
     currency: { control: { type: 'text' } },
     max: { control: { type: 'number' } },
     tooltipPosition: {
-      options: tooltipPositionType,
+      options: positions,
       control: { type: 'radio' },
     },
     mode: {

@@ -1,4 +1,4 @@
-import { Option } from 'projects/src/lib/dropdown/dropdown.component';
+import { Option } from 'projects/src/lib/components/dropdown/dropdown.component';
 
 export const defaultOptions: Option[] = [
   { name: null, code: null },

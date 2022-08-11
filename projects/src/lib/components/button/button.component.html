@@ -3,7 +3,7 @@
     [loading]="loading"
     [type]="isSubmit ? 'submit' : 'button'"
     label="{{ label }}"
-    class="p-button-{{ type }} {{ size }} {{ type }}-{{ style }}"
+    class="p-button-{{ severity }} {{ size }} {{ severity }}-{{ style }}"
     icon="pi {{ !loading ? icon : '' }}"
     iconPos="{{ !loading ? iconPos : '' }}"
     [pTooltip]="tooltip"

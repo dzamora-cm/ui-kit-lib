@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Severity } from './types/tag.component.types';
+import { Severity } from './types/tag.component.type';
 
 @Component({
   selector: 'ui-kit-tag',

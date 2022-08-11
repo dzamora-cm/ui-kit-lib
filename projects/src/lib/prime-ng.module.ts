@@ -5,6 +5,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TagModule } from 'primeng/tag';
+import { CheckboxModule } from 'primeng/checkbox';
 
 const primeNgModules: any[] = [
   ButtonModule,
@@ -13,6 +14,7 @@ const primeNgModules: any[] = [
   DropdownModule,
   InputNumberModule,
   TagModule,
+  CheckboxModule,
 ];
 
 @NgModule({

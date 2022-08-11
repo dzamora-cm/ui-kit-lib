@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { InputTextComponent } from '../../projects/src/lib/input-text/input-text.component';
+import { InputTextComponent } from '../../projects/src/lib/components/input-text/input-text.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
-import { iconPosType } from 'stories/button/initial-values';
+import { positionSimple } from 'projects/src/lib/shared/const';
 
 export default {
   component: InputTextComponent,
@@ -29,7 +29,7 @@ export default {
     tooltipIcon: { control: { type: 'text' } },
     placeholder: { control: { type: 'text' } },
     iconPos: {
-      options: iconPosType,
+      options: positionSimple,
       control: { type: 'radio' },
     },
   },

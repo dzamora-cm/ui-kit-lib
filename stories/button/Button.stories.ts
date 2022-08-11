@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { ButtonComponent } from '../../projects/src/lib/button/button.component';
+import { ButtonComponent } from '../../projects/src/lib/components/button/button.component';
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import {
-  buttonTypes,
-  sizesTypes,
-  styleType,
-  iconPosType,
-  tooltipPositionType,
-} from './initial-values';
+  severities,
+  sizes,
+  style,
+  positionSimple,
+  positions,
+} from '../../projects/src/lib/shared/const/index';
 
 export default {
   component: ButtonComponent,
@@ -20,26 +20,23 @@ export default {
     }),
   ],
   argTypes: {
-    type: {
-      options: buttonTypes,
-      control: { type: 'select' },
-    },
     size: {
-      options: sizesTypes,
+      options: sizes,
       control: { type: 'select' },
     },
     style: {
-      options: styleType,
+      options: style,
       control: { type: 'select' },
     },
     iconPos: {
-      options: iconPosType,
+      options: positionSimple,
       control: { type: 'radio' },
     },
     tooltipPosition: {
-      options: tooltipPositionType,
+      options: positions,
       control: { type: 'radio' },
     },
+    severity: { options: severities, control: { type: 'select' } },
   },
   excludeStories: /.*Data$/,
   title: 'BUTTON',
@@ -53,7 +50,7 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 export const ButtonPrimary = Template.bind({});
 ButtonPrimary.args = {
   label: 'Button Default',
-  type: 'primary',
+  severity: 'primary',
   size: 'large',
   icon: 'pi-search',
   tooltip: 'Hello word',
@@ -67,7 +64,7 @@ ButtonPrimary.args = {
 export const ButtonSecondary = Template.bind({});
 ButtonSecondary.args = {
   label: 'Button Default',
-  type: 'secondary',
+  severity: 'secondary',
   size: 'large',
   icon: 'pi-search',
   tooltip: 'Hello word',
